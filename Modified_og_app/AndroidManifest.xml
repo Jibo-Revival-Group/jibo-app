@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jibo">
+    <permission android:name="com.jibo.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jibo.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission-sdk-23 android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-feature android:glEsVersion="0x20000" android:required="true"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.jibo.JiboApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <service android:exported="false" android:name="com.jibo.service.JiboFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.jibo.service.JiboFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <activity android:launchMode="standard" android:name="com.jibo.ui.activity.OnBoardingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.OnBoarding" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/link_account_activate" android:scheme="https"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/link_reset_password" android:scheme="https"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/link_create" android:scheme="https"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/link_home" android:scheme="https"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/link_settings" android:scheme="settings"/>
+                <data android:host="*.jibo.com" android:pathPrefix="@string/google_auth_callback" android:scheme="settings"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="standard" android:name="com.jibo.ui.activity.WifiActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.OnBoarding" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.jibo.ui.activity.SingleFragmentActivity" android:parentActivityName="com.jibo.ui.activity.TabbedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jibo.ui.activity.TabbedActivity"/>
+        </activity>
+        <activity android:name="com.jibo.ui.activity.TipsActivity" android:parentActivityName="com.jibo.ui.activity.TabbedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jibo.ui.activity.TabbedActivity"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jibo.ui.activity.TabbedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="" android:name="com.jibo.ui.activity.PhotoViewerActivity" android:parentActivityName="com.jibo.ui.activity.TabbedActivity" android:theme="@style/AppTheme.PhotoViewer"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:label="" android:name="com.jibo.ui.activity.LoopInviteDetailsActivity" android:parentActivityName="com.jibo.ui.activity.TabbedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="" android:name="com.jibo.ui.activity.GuidedExperienceActivity" android:parentActivityName="com.jibo.ui.activity.TabbedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="" android:name="com.jibo.ui.activity.TagPhotoActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="" android:name="com.jibo.ui.activity.TipVideoActivity" android:screenOrientation="sensorLandscape" android:theme="@style/AppTheme.NoActionBar"/>
+        <provider android:authorities="@string/db_authority" android:exported="false" android:label="@string/data_provider_label" android:name="com.jibo.db.DatabaseProvider" android:syncable="true"/>
+        <provider android:authorities="@string/db_messages_authority" android:exported="false" android:label="@string/last_messages_provider_label" android:name="com.jibo.db.LoopsAndLastMessagesContentProvider" android:syncable="true"/>
+        <service android:exported="false" android:name="com.jibo.service.DeviceRegistrationService"/>
+        <service android:exported="false" android:name="com.jibo.service.DeviceUnRegistrationService"/>
+        <service android:exported="false" android:name="com.jibo.service.DataSyncJobService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.jibo.service.KeysCheckerJobService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.jibo.service.SyncTaskService"/>
+        <meta-data android:name="com.jibo.JiboGlideModule" android:value="GlideModule"/>
+        <provider android:authorities="com.jibo.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/files"/>
+        </provider>
+        <service android:exported="false" android:name="com.jibo.service.MessageSendingService"/>
+        <service android:exported="false" android:name="com.jibo.service.MediaDeletingService"/>
+        <service android:exported="false" android:name="com.jibo.service.KeyRequestingSharingService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.jibo.utils.LoopHolidaysAlarmReceiver"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/places_api_key"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="2adb8d7b01908cda80e9eabf164f95c2e8cf4adf"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.jibo.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:name="com.salesforce.android.knowledge.ui.internal.activity.KnowledgeActivity" android:theme="@style/KnowledgeTheme" android:windowSoftInputMode="stateUnchanged|adjustResize"/>
+        <activity android:name="com.salesforce.android.cases.ui.internal.features.publisher.CasePublisherActivity" android:theme="@style/ServiceCaseTheme" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:name="com.salesforce.android.cases.ui.internal.features.casefeed.CaseFeedActivity" android:theme="@style/ServiceCaseTheme" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:name="com.salesforce.android.cases.ui.internal.features.caselist.CaseListActivity" android:theme="@style/ServiceCaseTheme"/>
+        <service android:name="com.salesforce.android.service.common.liveagentlogging.internal.service.LiveAgentLoggingService"/>
+        <service android:exported="true" android:name="com.firebase.jobdispatcher.GooglePlayReceiver" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.salesforce.androidsdk.smartstore.ui.SmartStoreInspectorActivity"/>
+        <meta-data android:name="android.content.APP_RESTRICTIONS" android:resource="@xml/app_restrictions"/>
+        <service android:exported="true" android:name="com.salesforce.androidsdk.auth.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity" android:theme="@style/SalesforceSDK.ActionBarTheme"/>
+        <activity android:exported="false" android:name="com.salesforce.androidsdk.ui.PasscodeActivity" android:theme="@style/SalesforceSDK.ActionBarTheme"/>
+        <activity android:excludeFromRecents="true" android:name="com.salesforce.androidsdk.ui.ManageSpaceActivity" android:theme="@style/SalesforceSDK.ActionBarTheme"/>
+        <activity android:excludeFromRecents="true" android:name="com.salesforce.androidsdk.ui.ServerPickerActivity" android:theme="@style/SalesforceSDK.ActionBarTheme"/>
+        <activity android:excludeFromRecents="true" android:name="com.salesforce.androidsdk.ui.AccountSwitcherActivity" android:theme="@style/SalesforceSDK.ActionBarTheme"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.jibo"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.salesforce.androidsdk.push.SFDCGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.salesforce.androidsdk.push.SFDCInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.salesforce.androidsdk.push.SFDCRegistrationIntentService"/>
+        <receiver android:exported="false" android:name="com.salesforce.androidsdk.push.PushService$SFDCRegistrationRetryAlarmReceiver"/>
+        <service android:exported="false" android:name="com.salesforce.androidsdk.push.PushService"/>
+        <service android:exported="false" android:name="com.salesforce.androidsdk.analytics.AnalyticsPublisherService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jibo.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.jibo"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jibo.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

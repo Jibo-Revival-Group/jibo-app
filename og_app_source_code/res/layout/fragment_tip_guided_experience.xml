@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/activity_double_vertical_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_20" android:src="@drawable/part_of_your_life" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/content_2" android:layout_width="300.0dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/vertical_margin_40" android:text="@string/tips_content0_2" style="@style/Body1" />
+        <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_40" android:src="@drawable/helpful_bot" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/content_3" android:layout_width="300.0dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/vertical_margin_40" android:text="@string/tips_content0_3" style="@style/Body1" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_18sp" android:gravity="center_horizontal" android:id="@id/content_4" android:layout_width="300.0dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/vertical_margin_20" android:text="@string/tips_content0_4" android:textAllCaps="false" style="@style/Button.FlatLinkButton" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/content_5" android:layout_width="300.0dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/vertical_margin_40" android:text="@string/tips_content0_5" style="@style/Body1" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/content_6" android:layout_width="300.0dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/vertical_margin_20" android:text="@string/tips_content0_6" style="@style/Body1" />
+        <android.support.v7.widget.RecyclerView android:layout_gravity="center_horizontal" android:id="@android:id/list" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/tiny_padding_4dp" android:layout_marginTop="@dimen/vertical_margin_20" android:layout_marginRight="@dimen/tiny_padding_4dp" android:layout_marginBottom="@dimen/vertical_margin_20" android:requiresFadingEdge="none" />
+        <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_tip_next" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

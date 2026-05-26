@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/activity_big_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/cntNoNetwork" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnWiFiSettings" android:text="@string/btnWiFiSettings" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:text="@string/label_connect_phone_to_same_network" style="@style/SectionFooter" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/cntNetworkOn" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnSelectCurrentNetwork" android:text="@string/yes_use_network" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/textStep2Message" android:text="@string/label_you_currently_connected_to" style="@style/SectionFooter" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnSelectOtherNetwork" android:layout_marginTop="@dimen/activity_big_margin" android:text="@string/btnSelectOtherNetwork" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        </LinearLayout>
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnEnterNetworkManually" android:layout_marginTop="@dimen/activity_big_margin" android:text="@string/btnEnterNetworkManually" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnMacFiltering" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_padding" android:text="@string/button_mac_filtering" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

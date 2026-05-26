@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/holidayNameTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/custom_holidays_name_title" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+            <com.jibo.ui.view.proxima.CustomFontAutoCompleteTextView android:id="@id/holidayName" android:layout_width="match_parent" android:layout_marginLeft="1.0dp" android:text="" android:hint="@string/custom_holidays_name_hint" android:maxLength="32" android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionDone" style="@style/EditText" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/dateTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/custom_holidays_date_title" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:textColor="@android:color/black" android:id="@id/date" android:layout_width="match_parent" android:hint="@string/custom_holidays_date_hint" style="@style/Item" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_codes">
+        <item>MAINTENANCE_MODE</item>
+        <item>LOOP_SUSPENDED</item>
+        <item>AUTHORIZED_UNDER_ADMIN</item>
+        <item>AUTHORIZED_UNDER_DIFFERENT</item>
+        <item>ACCESS_KEY_NOT_FOUND</item>
+        <item>ACCOUNT_NOT_ACTIVE</item>
+        <item>MISSING_AUTH_HEADER</item>
+        <item>MISSING_ENCRYPTION_ALGORITHM</item>
+        <item>SIGNATURE_MISMATCH</item>
+        <item>ACCOUNT_SERVICE_UNAVAILABLE</item>
+        <item>CLOCK_SKEW_TOO_LONG</item>
+        <item>ACCOUNT_NOT_FOUND</item>
+        <item>ACCOUNT_IS_DELETED</item>
+        <item>EMAIL_ALREADY_EXISTS</item>
+        <item>EMAIL_WAS_NOT_CHANGED</item>
+        <item>ACCOUNT_ACTIVATED</item>
+        <item>WRONG_PASSWORD</item>
+        <item>DEVICE_NOT_FOUND</item>
+        <item>PASSWORD_CODE_WRONG</item>
+        <item>TOKEN_NOT_FOUND</item>
+        <item>TOKEN_EXPIRED</item>
+        <item>OWNER_CAN_REMOVE</item>
+        <item>OWNER_CAN_MANIPULATE</item>
+        <item>MEMBER_CAN_REQUEST</item>
+        <item>ACTIVATION_CODE_NOT_FOUND</item>
+        <item>LOOP_NOT_FOUND</item>
+        <item>CAN_BE_ACCESSED_BY_OWNER</item>
+        <item>CAN_BE_ACCESSED_BY_OWNER_OR_ROBOT</item>
+        <item>CAN_BE_ACCESSED_BY_OWNER_OR_SELF</item>
+        <item>MEMBER_EXISTS</item>
+        <item>MEMBER_NOT_FOUND</item>
+        <item>ROBOT_NOT_FOUND</item>
+        <item>INVITE_NOT_FOUND</item>
+        <item>INVITE_NOT_FOUND</item>
+        <item>ROBOT_REQUIRED</item>
+        <item>UNAUTHORIZED</item>
+    </string-array>
+    <string-array name="error_messages">
+        <item>Maintenance in progress</item>
+        <item>Loop is suspended and cannot be modified</item>
+        <item>Must be authorized under admin account</item>
+        <item>Must be authorized under different account</item>
+        <item>Access key not found</item>
+        <item>Account not active</item>
+        <item>Request is not signed properly, missing authorization header</item>
+        <item>Request is not signed properly, encryption algorithm not specified</item>
+        <item>Signature does not match</item>
+        <item>Account service not found</item>
+        <item>@string/error_clock_skew</item>
+        <item>Account not found</item>
+        <item>Account is removed</item>
+        <item>Account with such e-mail already exists</item>
+        <item>Email was not changed</item>
+        <item>Account is already active</item>
+        <item>Wrong password</item>
+        <item>Device not found</item>
+        <item>Password reset code is wrong</item>
+        <item>Token not found</item>
+        <item>Token expired</item>
+        <item>Owner can only remove accounts with no associated e-mail</item>
+        <item>Only owner can manipulate loop or members</item>
+        <item>You can only request members that are in your loops</item>
+        <item>Activation code not found</item>
+        <item>Loop does not exist</item>
+        <item>Only owner can manipulate this loop</item>
+        <item>Only owner or robot can manipulate this loop</item>
+        <item>Only owner can manipulate this loop or account himself</item>
+        <item>Member already exists</item>
+        <item>Member not found</item>
+        <item>Robot not found</item>
+        <item>Invitation not found</item>
+        <item>Reached limit for active members</item>
+        <item>Robot is required for loop creation</item>
+        <item>Account not found</item>
+    </string-array>
+    <string-array name="gender_titles">
+        <item>@string/Male</item>
+        <item>@string/Female</item>
+        <item>@string/decline_to_answer</item>
+        <item>@string/they</item>
+    </string-array>
+    <string-array name="gender_values">
+        <item>@string/Male</item>
+        <item>@string/Female</item>
+        <item>@string/decline</item>
+        <item>@string/they</item>
+    </string-array>
+    <string-array name="oauthScopes">
+        <item>api</item>
+    </string-array>
+    <string-array name="picture_options">
+        <item>Take Photo</item>
+        <item>Choose Photo</item>
+    </string-array>
+    <string-array name="picture_options_alt">
+        <item>Take Photo</item>
+        <item>Choose Photo</item>
+        <item>Remove</item>
+    </string-array>
+</resources>

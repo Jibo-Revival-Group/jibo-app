@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_gridview" android:id="@id/action_gridview" android:orderInCategory="100" android:title="Gridview" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_timeline" android:id="@id/action_timeline" android:orderInCategory="101" android:title="Timeline" app:showAsAction="always" />
+</menu>

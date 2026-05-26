@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip5" android:tag="TAG_TIP5" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image5" android:layout_width="83.0dp" android:layout_height="match_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/tips_main_5" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image5" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title5" android:layout_toRightOf="@id/tips_image5" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_text5" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip2" android:tag="TAG_TIP4" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image2" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/tips_main_4_new" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image2" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title2" android:layout_toRightOf="@id/tips_image2" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_text2" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip0" android:tag="TAG_TIP0" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image0" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/jibo_straight" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image0" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tips_title0" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="@string/tips_text0" android:lineSpacingExtra="3.0dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip1" android:tag="TAG_TIP1" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image1" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/tips_main_1_new" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image1" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title1" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="@string/tips_text1" android:lineSpacingExtra="3.0dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip4" android:tag="TAG_TIP2" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image4" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/tips_main_4" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image4" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title4" android:layout_toRightOf="@id/tips_image4" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_text4" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/tip3" android:tag="TAG_TIP3" android:background="?selectableItemBackground" android:clickable="true" android:layout_width="match_parent" android:layout_height="140.0dp">
+            <ImageView android:id="@id/tips_image3" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/tips_main_2" />
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/tips_image3" android:layout_centerVertical="true">
+                <com.jibo.ui.view.FontFitTextView android:textSize="@dimen/text_size_20sp" android:textColor="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title3" android:layout_toRightOf="@id/tips_image3" app:customFont="ProximaNova-Bold.otf" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_text3" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

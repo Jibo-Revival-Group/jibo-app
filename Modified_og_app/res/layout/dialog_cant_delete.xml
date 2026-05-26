@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/default_padding" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/default_padding" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:paddingLeft="@dimen/default_padding" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/owner_account_delete_text" android:lineSpacingExtra="@dimen/default_padding" style="@style/Body1.Steel" />
+</LinearLayout>

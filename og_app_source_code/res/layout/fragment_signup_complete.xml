@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/content_area" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dp">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_15sp" android:textColor="@android:color/black" android:gravity="center_horizontal" android:id="@id/text_instructions" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/text_some_text_after_registration" android:lineSpacingExtra="5.0dp" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnResendVerificationEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_margin_small" android:layout_marginBottom="16.0dp" android:text="@string/button_resend_verification_email" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/btnOpenEmailApp" android:layout_below="@id/content_area">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/check_email" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.jibo.ui.view.proxima.CustomFontButton android:id="@id/btnOpenEmailApp" android:layout_width="210.0dp" android:layout_marginTop="30.0dp" android:layout_marginBottom="30.0dp" android:text="@string/button_open_email_app" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+</RelativeLayout>

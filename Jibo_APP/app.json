@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Jibo Revival",
+    "slug": "jibo-revival",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./src/assets/media/avatar_big_01.png",
+    "assetBundlePatterns": [
+      "src/assets/media/*"
+    ],
+    "splash": {
+      "image": "./src/assets/media/jibo_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#eff0f2"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jiborevival.app",
+      "appleTeamId": "4MMQRDLDK9"
+    },
+    "android": {
+      "package": "com.jiborevival.app",
+      "predictiveBackGestureEnabled": false,
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/media/avatar_big_01.png",
+        "backgroundColor": "#eff0f2"
+      }
+    }
+  }
+}

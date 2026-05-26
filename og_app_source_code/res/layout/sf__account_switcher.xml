@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/darker_gray" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:id="@id/sf__accounts_group" style="@style/SalesforceSDK.AccountSwitcher.List" />
+    <Button android:id="@id/sf__switcher_apply_button" android:text="@string/sf__switch_account" android:onClick="switchToExistingAccount" style="@style/SalesforceSDK.AccountSwitcher.Button.Apply" />
+    <Button android:id="@id/sf__add_account_button" android:text="@string/sf__add_new_account" android:onClick="switchToNewAccount" style="@style/SalesforceSDK.AccountSwitcher.Button.AddAccount" />
+</LinearLayout>

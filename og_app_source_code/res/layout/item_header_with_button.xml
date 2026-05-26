@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:text="@string/header_loop_members" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="bottom" android:id="@android:id/button1" android:paddingLeft="@dimen/section_header_margin_left" android:paddingTop="@dimen/section_header_margin_top" android:paddingRight="@dimen/section_header_margin_right" android:paddingBottom="@dimen/section_header_margin_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/Button.FlatLinkButton" />
+</RelativeLayout>

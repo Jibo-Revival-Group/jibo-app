@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.RoundedImageView android:id="@android:id/icon" android:background="@drawable/circle_photo_small_bg" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_avatar_gender_male" android:scaleType="fitXY" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/default_padding" android:layout_toLeftOf="@id/statusContainer" android:layout_toRightOf="@android:id/icon" android:layout_centerVertical="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text2" android:paddingRight="@dimen/default_padding" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/Caption" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/statusContainer" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentRight="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:id="@id/textStatus" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/item_loop_member_status_you" style="@style/Placeholder" />
+        <ImageView android:layout_gravity="center" android:id="@android:id/icon1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_smartphone" />
+    </FrameLayout>
+</RelativeLayout>

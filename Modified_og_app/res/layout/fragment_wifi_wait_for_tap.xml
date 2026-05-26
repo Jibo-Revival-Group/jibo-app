@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@color/jibo_blue" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_title_wait_for_the_tap_screen" app:customFont="ProximaNova-Bold.otf" style="@style/Headline.Light" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/text_wifi_wait_tap_screen_info" style="@style/Body1.White" />
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center" android:layout_width="210.0dp" android:layout_height="210.0dp" android:src="@drawable/jibo_tap_screen" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center|bottom" android:orientation="vertical" android:paddingBottom="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_double_vertical_margin">
+        <com.jibo.ui.view.proxima.CustomFontButton android:id="@id/btnJiboOk" android:text="@string/button_i_see_screen_above" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.White" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textColor="@color/white" android:id="@id/btnNoScreen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/textlink_the_tap_screen_didnt_appear" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</LinearLayout>

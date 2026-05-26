@@ -1,0 +1,110 @@
+[
+  {
+    "id": 16,
+    "name": "Pop",
+    "count": 249,
+    "rank": null
+  },
+  {
+    "id": 5,
+    "name": "Country",
+    "count": 330,
+    "rank": null
+  },
+  {
+    "id": 6,
+    "name": "Hip Hop and RnB",
+    "count": 201,
+    "rank": null
+  },
+  {
+    "id": 77,
+    "name": "Dance",
+    "count": 24,
+    "rank": null
+  },
+  {
+    "id": 1,
+    "name": "Alternative",
+    "count": 86,
+    "rank": null
+  },
+  {
+    "id": 3,
+    "name": "Classic Rock",
+    "count": 135,
+    "rank": null
+  },
+  {
+    "id": 93,
+    "name": "NPR",
+    "count": 92,
+    "rank": null
+  },
+  {
+    "id": 9,
+    "name": "News & Talk",
+    "count": 381,
+    "rank": null
+  },
+  {
+    "id": 7,
+    "name": "Jazz",
+    "count": 20,
+    "rank": null
+  },
+  {
+    "id": 4,
+    "name": "Classical",
+    "count": 33,
+    "rank": null
+  },
+  {
+    "id": 11,
+    "name": "Reggae & Island",
+    "count": 6,
+    "rank": null
+  },
+  {
+    "id": 1192,
+    "name": "Latin",
+    "count": 133,
+    "rank": null
+  },
+  {
+    "id": 10,
+    "name": "Oldies",
+    "count": 132,
+    "rank": null
+  },
+  {
+    "id": 15,
+    "name": "Sports",
+    "count": 168,
+    "rank": null
+  },
+  {
+    "id": 19,
+    "name": "Comedy",
+    "count": 12,
+    "rank": null
+  },
+  {
+    "id": 13,
+    "name": "Soft Rock",
+    "count": 94,
+    "rank": null
+  },
+  {
+    "id": 2,
+    "name": "Christian & Gospel",
+    "count": 120,
+    "rank": null
+  },
+  {
+    "id": 18,
+    "name": "80s Hits",
+    "count": 10,
+    "rank": null
+  }
+]

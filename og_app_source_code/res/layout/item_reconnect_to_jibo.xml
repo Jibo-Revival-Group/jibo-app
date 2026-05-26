@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/btnReconnectToJibo" android:background="@drawable/selectable_list_item_bg" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+        <ImageView android:id="@id/icon1" android:background="@drawable/circle_primary_filled" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/avatar_levels" android:scaleType="fitXY" android:layout_centerVertical="true" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/text_size_16sp" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/default_padding" android:text="@string/reconnect_to" android:layout_toRightOf="@id/icon1" android:layout_centerVertical="true" app:customFont="ProximaNova-Bold.otf" />
+    </RelativeLayout>
+    <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" />
+</LinearLayout>

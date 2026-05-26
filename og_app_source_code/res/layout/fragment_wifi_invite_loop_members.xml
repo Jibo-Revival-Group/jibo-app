@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorWindowBackground" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@android:id/closeButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="@dimen/activity_vertical_margin" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/wifi_prep_step1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dp">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_invite_loop_members_title" android:lineSpacingExtra="3.0dp" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:paddingTop="@dimen/tiny_padding_4dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/text_invite_loop_members_info1" android:lineSpacingExtra="3.0dp" style="@style/Body1" />
+        <ImageView android:layout_width="191.0dp" android:layout_height="209.0dp" android:layout_marginTop="@dimen/activity_vertical_margin" android:src="@drawable/invite_loop_members" />
+        <com.jibo.ui.view.proxima.CustomFontButton android:id="@id/btnInvitePeople" android:layout_marginTop="@dimen/activity_big_margin" android:layout_marginBottom="@dimen/default_padding" android:text="@string/button_invite_loop_members_button" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_14sp" android:gravity="center_horizontal" android:paddingTop="@dimen/tiny_padding_4dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:text="@string/text_invite_loop_members_info2" android:lineSpacingExtra="3.0dp" style="@style/Body1.Steel" />
+    </LinearLayout>
+</RelativeLayout>

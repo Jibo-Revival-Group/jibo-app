@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_wifi_settings" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_settings_wi_fi" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:ellipsize="marquee" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" style="@style/Body1.Steel" />
+    </LinearLayout>
+</LinearLayout>

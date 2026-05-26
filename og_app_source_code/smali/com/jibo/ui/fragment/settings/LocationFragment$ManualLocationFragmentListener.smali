@@ -1,0 +1,19 @@
+.class public interface abstract Lcom/jibo/ui/fragment/settings/LocationFragment$ManualLocationFragmentListener;
+.super Ljava/lang/Object;
+.source "LocationFragment.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/jibo/ui/fragment/settings/LocationFragment;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "ManualLocationFragmentListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract a(Lcom/jibo/ui/activity/SingleFragmentActivity$Builder;)V
+.end method

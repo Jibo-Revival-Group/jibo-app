@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jibo.ui.view.RoundedImageView android:id="@id/avatar" android:background="@drawable/button_circle_blue" android:layout_width="@dimen/avatar_size" android:layout_height="@dimen/avatar_size" android:scaleType="fitXY" />
+    <ProgressBar android:id="@id/photoProgressBar" android:visibility="gone" android:clickable="true" android:layout_width="@dimen/avatar_size" android:layout_height="@dimen/avatar_size" android:indeterminate="true" style="?android:progressBarStyleLargeInverse" />
+    <ImageView android:layout_gravity="right|bottom" android:id="@id/avatar_edit" android:visibility="gone" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_camera" />
+</FrameLayout>

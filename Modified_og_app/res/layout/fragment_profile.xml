@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/jibo_blue" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin">
+        <com.jibo.ui.view.RoundedImageView android:id="@id/avatar" android:layout_width="@dimen/avatar_size" android:layout_height="@dimen/avatar_size" />
+        <ProgressBar android:id="@id/photoProgressBar" android:visibility="gone" android:clickable="true" android:layout_width="@dimen/avatar_size" android:layout_height="@dimen/avatar_size" android:indeterminate="true" style="?android:progressBarStyleLargeInverse" />
+    </RelativeLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/profileName" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="Jon Doe" android:maxLines="1" app:customFont="ProximaNova-Semibold.ttf" style="@style/Title.Light" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center" android:id="@id/profileNickName" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+    <View android:background="@color/pearl" android:layout_width="wrap_content" android:layout_height="0.5dp" android:layout_marginTop="@dimen/activity_big_margin" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/contactAdult" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:layout_width="55.0dp" android:layout_height="wrap_content" android:src="@drawable/ic_envelope" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/activity_horizontal_margin" android:text="@string/text_contact" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+        <com.jibo.ui.view.FontFitTextView android:gravity="right" android:id="@id/profileEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:lines="1" android:layout_weight="1.0" style="@style/Body1.White" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/contactChild" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:layout_width="55.0dp" android:layout_height="wrap_content" android:src="@drawable/ic_people" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/activity_horizontal_margin" android:text="@string/legal_guardian" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+        <com.jibo.ui.view.FontFitTextView android:gravity="right" android:id="@id/legalGuardianName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:lines="1" android:layout_weight="1.0" style="@style/Body1.White" />
+    </LinearLayout>
+    <View android:background="@color/pearl" android:layout_width="wrap_content" android:layout_height="0.5dp" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:layout_width="55.0dp" android:layout_height="wrap_content" android:src="@drawable/ic_birthday" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_birthday" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="right" android:id="@id/profileBirthday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/Body1.White" />
+    </LinearLayout>
+    <View android:background="@color/pearl" android:layout_width="wrap_content" android:layout_height="0.5dp" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:layout_width="55.0dp" android:layout_height="wrap_content" android:src="@drawable/ic_voicefaceid" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_voice_face_id" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="right" android:id="@id/profileTrained" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/Body1.White" />
+    </LinearLayout>
+    <View android:id="@id/personalSettingDivider" android:background="@color/pearl" android:layout_width="wrap_content" android:layout_height="0.5dp" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/personalSettingsRow" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:layout_width="55.0dp" android:layout_height="55.0dp" android:src="@drawable/sun" android:scaleType="center" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal_report" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="right" android:id="@id/personalSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/Body1.White" />
+    </LinearLayout>
+    <View android:background="@color/pearl" android:layout_width="wrap_content" android:layout_height="0.5dp" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/daysLeftInfo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="@dimen/default_padding" android:layout_marginRight="@dimen/activity_horizontal_margin" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1.White" />
+    <View android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <ImageView android:id="@id/bottomPanel" android:background="@drawable/profile_bottom_bar" android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

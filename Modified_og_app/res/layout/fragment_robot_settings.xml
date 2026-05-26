@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/activity_big_margin" android:paddingBottom="@dimen/activity_big_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnAbout" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_extended_list_item_height" android:layout_marginBottom="1.0dp">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_about" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_settings_about" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/settingNameTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_about_info" style="@style/Body1.Steel" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnJiboName" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_extended_list_item_height" android:layout_marginBottom="1.0dp">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_label" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_your_jibos_name" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:ellipsize="marquee" android:id="@id/txtJiboName" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" style="@style/Body1.Steel" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnJiboAvatar" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="@dimen/activity_big_margin">
+            <ImageView android:id="@id/imgJiboAvatar" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/avatar_levels" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_your_jibos_avatar" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnWiFiSettings" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_extended_list_item_height" android:layout_marginBottom="1.0dp">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_wifi_settings" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_settings_wi_fi" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+                <com.jibo.ui.view.proxima.CustomFontTextView android:ellipsize="marquee" android:id="@id/txtJiboWifi" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" style="@style/Body1.Steel" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnLocation" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:visibility="visible" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="1.0dp">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_location" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_location" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+                <com.jibo.ui.view.FontFitTextView android:ellipsize="marquee" android:id="@id/txtJiboLocation" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/text_location_not_set" android:maxLines="1" style="@style/Body1.Steel" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnEnableRemoteControl" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:visibility="visible" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="@dimen/activity_big_margin">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_remote_control" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/text_enable_remote_control" android:layout_weight="1.0" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+            <Switch android:layout_gravity="right|center" android:id="@id/switchRemoteEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnHolidays" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="@dimen/activity_big_margin">
+            <ImageView android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_holidays" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_settings_holidays" app:customFont="ProximaNova-Bold.otf" style="@style/Body2" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btnPassphrase" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="@dimen/activity_big_margin">
+            <ImageView android:id="@id/icon_passphrase" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:src="@drawable/ic_no_passphrase" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/passphrase_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/content_passphrase" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

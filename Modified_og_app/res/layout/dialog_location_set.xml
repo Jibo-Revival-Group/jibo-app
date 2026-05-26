@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/vertical_margin_20" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="0.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="250.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin">
+        <View android:id="@id/icon" android:background="@drawable/ic_checkbox_circle_green_filled" android:layout_width="40.0dp" android:layout_height="40.0dp" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_margin_small" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true">
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/location" android:paddingLeft="@dimen/default_padding" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body1" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/timezone" android:paddingLeft="@dimen/default_padding" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Body1.Steel" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_big_margin">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnCancel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passphrase_no_thanks" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="bottom" android:id="@id/btnSet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/okay" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</LinearLayout>

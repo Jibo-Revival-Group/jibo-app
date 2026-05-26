@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/black" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.jibo.ui.view.TouchImageView android:id="@id/transitionImage" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <com.jibo.ui.view.PhotoViewerViewPager android:id="@id/pager" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </RelativeLayout>
+    <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="@color/colorSemiTransparent" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <RelativeLayout android:id="@id/footer" android:background="@color/colorSemiTransparent" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/default_padding" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/toolbar">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_12sp" android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@android:id/title" android:layout_alignParentRight="true" app:customFont="ProximaNova-Semibold.ttf" />
+    </RelativeLayout>
+    <include android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height" android:layout_below="@id/footer" layout="@layout/include_network_down_placeholder" />
+</RelativeLayout>

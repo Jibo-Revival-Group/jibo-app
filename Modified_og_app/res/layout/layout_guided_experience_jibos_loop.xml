@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingTop="@dimen/vertical_margin_20" android:paddingBottom="@dimen/activity_margin_small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/guided_experience_jibos_loop_title" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/txtInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dp" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_marginRight="30.0dp" android:text="@string/guided_experience_jibos_loop_text" android:lineSpacingExtra="3.0dp" style="@style/Body1" />
+</LinearLayout>

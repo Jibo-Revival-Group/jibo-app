@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/tiny_padding_4dp" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="@dimen/default_extended_list_item_height" android:layout_height="match_parent">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/avatar_size_small" android:layout_height="@dimen/avatar_size_small" android:src="@drawable/plus_white_filled" />
+        <View android:layout_gravity="center" android:id="@id/pulse" android:background="@drawable/button_circle_blue" android:layout_width="@dimen/avatar_size_small" android:layout_height="@dimen/avatar_size_small" android:alpha="0.0" />
+    </FrameLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/tiny_padding_4dp" android:text="@string/text_custom_holiday_add" app:customFont="ProximaNova-Bold.otf" style="@style/Caption.Action" />
+</LinearLayout>

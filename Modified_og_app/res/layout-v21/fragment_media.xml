@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@id/swipeRefreshLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView android:id="@android:id/list" android:paddingLeft="@dimen/moment_grid_item_padding" android:paddingRight="@dimen/moment_grid_item_padding" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <RelativeLayout android:id="@android:id/progress" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <com.github.rahatarmanahmed.cpv.CircularProgressView android:background="@drawable/circle_white_filled" android:padding="4.0dp" android:layout_width="@dimen/progressbar_size_40" android:layout_height="@dimen/progressbar_size_40" android:layout_marginTop="@dimen/default_padding" android:layout_marginBottom="@dimen/default_padding" android:layout_centerInParent="true" android:elevation="2.0dp" app:cpv_animAutostart="true" app:cpv_indeterminate="true" app:cpv_thickness="3.0dp" app:elevation="2.0dp" />
+    </RelativeLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="-28.0dp">
+        <FrameLayout android:id="@android:id/empty" android:background="@color/colorWindowBackground" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="78.0dp" android:text="@string/text_nothing_here" app:customFont="ProximaNova-Bold.otf" style="@style/Headline.Steel" />
+            <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin" android:src="@drawable/empty_media" android:scaleType="centerCrop" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center|bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dp" android:layout_marginBottom="68.0dp" android:text="@string/media_empty_text" android:lineSpacingExtra="3.0dp" style="@style/Body1.Steel" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/viewNoKey" android:background="@color/colorWindowBackground" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.jibo.ui.view.FontFitTextView android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="78.0dp" android:text="@string/text_waiting_for_jibo" app:customFont="ProximaNova-Bold.otf" style="@style/Headline.Steel" />
+            <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:src="@drawable/empty_media" android:scaleType="centerCrop" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center|bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="60.0dp" android:text="@string/media_nokey_text" style="@style/Body1.Steel" />
+        </FrameLayout>
+    </FrameLayout>
+    <include layout="@layout/include_network_down_placeholder" />
+</RelativeLayout>

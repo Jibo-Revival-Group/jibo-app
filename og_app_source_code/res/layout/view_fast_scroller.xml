@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="wrap_content" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="48.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="end" android:id="@id/fastscroller_bubble" android:background="@drawable/fast_scroller_bubble" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/fastscroller_handle" android:paddingLeft="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dp" android:src="@drawable/fast_scroller_handle" android:paddingStart="8.0dp" android:layout_marginEnd="8.0dp" />
+</merge>

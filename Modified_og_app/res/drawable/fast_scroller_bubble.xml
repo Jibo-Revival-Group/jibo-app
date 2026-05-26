@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:topLeftRadius="44.0dp" android:topRightRadius="44.0dp" android:bottomLeftRadius="44.0dp" android:bottomRightRadius="0.0px" />
+    <solid android:color="@color/jibo_blue" />
+    <size android:height="88.0dp" android:width="88.0dp" />
+</shape>

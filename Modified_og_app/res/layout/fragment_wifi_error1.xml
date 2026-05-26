@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/header_wi_fi_network_ssid_and_password" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editSSID" android:text="" android:hint="@string/hint_wifi_ssid" android:maxLines="1" android:singleLine="true" android:maxLength="32" android:inputType="text" android:imeOptions="actionNext" style="@style/EditText" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editPassword" android:layout_marginTop="1.0dp" android:text="" android:hint="@string/hint_wifi_password" android:inputType="textVisiblePassword" android:imeOptions="actionDone" style="@style/EditText" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/txtPasswordHint" android:paddingRight="@dimen/activity_double_horizontal_margin" android:minHeight="64.0dp" android:text="@string/label_enter_ssid_pwd" style="@style/SectionFooter" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnTryAgain" android:layout_marginTop="@dimen/activity_big_margin" android:text="@string/button_try_again" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnSupport" android:layout_marginTop="1.0dp" android:text="@string/button_detailed_troubleshooting" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

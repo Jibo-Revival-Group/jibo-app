@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="50.0dp" android:paddingRight="50.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nothing_here" app:customFont="ProximaNova-Bold.otf" style="@style/Headline.Steel" />
+        <ImageView android:layout_gravity="center_horizontal" android:background="@drawable/circle_white_filled" android:layout_width="180.0dp" android:layout_height="180.0dp" android:layout_marginTop="40.0dp" android:layout_marginBottom="45.0dp" android:src="@drawable/icn_gqaa_question" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/footer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_recap_empty_state_text" style="@style/Body1.PopUpGrey" />
+    </LinearLayout>
+</RelativeLayout>

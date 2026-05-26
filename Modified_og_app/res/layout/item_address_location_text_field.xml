@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.ui.view.skills.LocationAutoCompleteTextView android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="@dimen/default_extended_list_item_height" android:text="" android:hint="@string/manual_location_hint" android:maxLines="2" android:maxLength="91" android:imeOptions="actionDone" style="@style/EditText"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

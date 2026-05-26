@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.ui.view.proxima.CustomFontTextView android:paddingLeft="@dimen/dialog_padding" android:paddingTop="@dimen/dialog_top_padding" android:paddingRight="@dimen/dialog_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Body1.PopUpRed"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

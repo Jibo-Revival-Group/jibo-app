@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.FontFitTextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tell_jibo_to_use_a_different_name" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/nickname" android:text="" android:hint="@string/nickname_hint" android:maxLength="20" android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionDone" style="@style/EditText" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="14.0sp" android:textColor="@color/text_color_blue" android:id="@id/nickname_skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/activity_horizontal_margin" android:text="@string/skip_for_now" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:customFont="ProximaNova-Light.ttf" />
+        </RelativeLayout>
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/preferredNameTip" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dp" android:text="@string/preferred_name_tip" style="@style/SectionFooter" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/viewLoopMembers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_padding" android:text="@string/view_loop_members" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+        <com.jibo.ui.view.FontFitTextView android:gravity="left|center" android:id="@id/changePronunciationName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_padding" android:text="@string/change_name_pronunciation" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</ScrollView>

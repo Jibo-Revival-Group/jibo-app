@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:padding="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_big_margin">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/robot_about_owner" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/owner_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:text="@string/robot_about_owner" style="@style/Caption" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/owner_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:text="@string/robot_about_owner" style="@style/Caption" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:padding="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dp">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/robot_about_os" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/os_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:text="1.0.2" style="@style/Caption" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:padding="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dp">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/robot_about_serial" app:customFont="ProximaNova-Semibold.ttf" style="@style/Body2" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/serial_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" android:text="Pepper.Circle.Almond.Pees" style="@style/Caption" />
+    </LinearLayout>
+</LinearLayout>

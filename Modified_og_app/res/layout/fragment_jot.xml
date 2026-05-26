@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@android:id/empty" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_gravity="center_horizontal" android:background="@drawable/circle_gray_filled" android:layout_width="210.0dp" android:layout_height="210.0dp" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/text_jot_empty" style="@style/Body1.Steel" />
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@id/swipeRefreshLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:orientation="vertical" android:id="@id/message_input_container" android:background="@color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_alignParentTop="true" />
+                <RelativeLayout android:orientation="vertical" android:id="@id/message_input_inner_container" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@id/message_input_top_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48.0dp">
+                        <com.jibo.ui.view.proxima.CustomFontEditText android:textSize="@dimen/text_size_15sp" android:textColorHint="@color/steel" android:id="@id/message_edit" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="12.0dp" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_marginBottom="12.0dp" android:hint="@string/message_input_hint" android:maxLines="3" android:layout_centerVertical="true" android:inputType="textFilter|textCapSentences|textMultiLine" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/message_input_bottom_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/message_input_top_container">
+                        <LinearLayout android:orientation="horizontal" android:id="@id/message_buttons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_marginBottom="8.0dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                            <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_12sp" android:textColor="@color/steel" android:layout_gravity="center_vertical" android:id="@id/letter_count" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <ImageButton android:id="@id/button_send" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/ic_send_arrow" />
+                        </LinearLayout>
+                        <ImageView android:id="@id/icon_tag" android:paddingTop="2.0dp" android:layout_width="@dimen/message_tag_icon_size" android:layout_height="@dimen/message_tag_icon_size" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="@dimen/message_padding" android:layout_marginRight="5.0dp" android:src="@drawable/ic_tag" android:tint="@color/jibo_blue" />
+                        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/message_padding" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toLeftOf="@id/message_buttons" android:layout_toRightOf="@id/icon_tag">
+                            <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_12sp" android:textColor="@color/jibo_blue" android:gravity="center_vertical" android:id="@id/tags" android:background="?selectableItemBackgroundBorderless" android:paddingBottom="@dimen/message_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tag_people" android:layout_centerVertical="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+                <ImageButton android:id="@id/button_camera" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_marginBottom="@dimen/default_padding" android:src="@drawable/ic_camera" android:layout_alignBottom="@id/message_input_inner_container" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView android:id="@android:id/list" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/message_input_container" />
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

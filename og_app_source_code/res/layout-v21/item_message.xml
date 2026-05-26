@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/activity_margin_small" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_margin_small" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="12.0sp" android:id="@id/date" android:paddingBottom="@dimen/default_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:textAllCaps="true" android:letterSpacing="0.1" app:customFont="ProximaNova-Semibold.ttf" />
+    <com.jibo.ui.view.RoundedImageView android:id="@id/sender_avatar" android:visibility="gone" android:layout_width="@dimen/avatar_size_small" android:layout_height="@dimen/avatar_size_small" />
+    <RelativeLayout android:layout_width="@dimen/jot_message_thumbnail_width" android:layout_height="wrap_content" android:layout_toRightOf="@id/sender_avatar" android:layout_below="@id/date" android:layout_alignParentRight="true">
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" layout="@layout/view_message_content" />
+    </RelativeLayout>
+</RelativeLayout>

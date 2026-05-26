@@ -1,0 +1,88 @@
+.class Landroid/arch/core/internal/SafeIterableMap$DescendingIterator;
+.super Landroid/arch/core/internal/SafeIterableMap$ListIterator;
+.source "SafeIterableMap.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/arch/core/internal/SafeIterableMap;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "DescendingIterator"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Landroid/arch/core/internal/SafeIterableMap$ListIterator",
+        "<TK;TV;>;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>(Landroid/arch/core/internal/SafeIterableMap$Entry;Landroid/arch/core/internal/SafeIterableMap$Entry;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 287
+    invoke-direct {p0, p1, p2}, Landroid/arch/core/internal/SafeIterableMap$ListIterator;-><init>(Landroid/arch/core/internal/SafeIterableMap$Entry;Landroid/arch/core/internal/SafeIterableMap$Entry;)V
+
+    .line 288
+    return-void
+.end method
+
+
+# virtual methods
+.method a(Landroid/arch/core/internal/SafeIterableMap$Entry;)Landroid/arch/core/internal/SafeIterableMap$Entry;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;)",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 292
+    iget-object v0, p1, Landroid/arch/core/internal/SafeIterableMap$Entry;->d:Landroid/arch/core/internal/SafeIterableMap$Entry;
+
+    return-object v0
+.end method
+
+.method b(Landroid/arch/core/internal/SafeIterableMap$Entry;)Landroid/arch/core/internal/SafeIterableMap$Entry;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;)",
+            "Landroid/arch/core/internal/SafeIterableMap$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 297
+    iget-object v0, p1, Landroid/arch/core/internal/SafeIterableMap$Entry;->c:Landroid/arch/core/internal/SafeIterableMap$Entry;
+
+    return-object v0
+.end method

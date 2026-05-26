@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:layout_marginLeft="@dimen/activity_margin_small" android:text="@string/dialog_age_group_coppa" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton.Small"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

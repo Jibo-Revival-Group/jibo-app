@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Version: code" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin">
+                    <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Current Endpoint" android:layout_weight="0.0" style="@style/Body1.Steel" />
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/black" android:gravity="right" android:id="@id/current_endpoint" android:paddingLeft="@dimen/activity_margin_small" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin">
+                    <TextView android:layout_gravity="center_vertical" android:paddingRight="@dimen/default_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Endpoint" style="@style/Body1.Steel" />
+                    <Spinner android:id="@id/endpoint" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                </LinearLayout>
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btnSetEndpoint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Set Endpoint" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    <EditText android:id="@id/endpoint_edit" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="endpoint: e.g. api.com" android:maxLines="1" android:layout_toLeftOf="@id/btnSetEndpoint" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin">
+                    <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Encryption" android:layout_weight="1.0" style="@style/Body1.Steel" />
+                    <Switch android:id="@id/switchEncryption" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_marginBottom="@dimen/activity_vertical_margin">
+                    <TextView android:layout_gravity="center_vertical" android:paddingRight="@dimen/default_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loop:" style="@style/Body1.Steel" />
+                    <Spinner android:id="@id/loops" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <Button android:id="@id/btnRequestKey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Request The Key" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin">
+                    <TextView android:layout_gravity="center_vertical" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Loop:" style="@style/Body1.Steel" />
+                    <Spinner android:id="@id/loops3" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <TextView android:layout_gravity="center_vertical" android:id="@id/ugcKey" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Body1.Steel" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin">
+                    <Spinner android:id="@id/loops4" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <Button android:id="@id/btnSuspendLoop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Suspend Loop" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin">
+                    <Spinner android:id="@id/loops1" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <Button android:id="@id/btnGenerateKey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Generate The Key" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GQA Attribution" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <Spinner android:id="@id/loops2" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                        <Button android:id="@id/btnListAttributions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="List Attributions" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <EditText android:id="@id/question_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="What is weather" />
+                        <Button android:id="@id/btnSendQuestion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send Question" />
+                    </LinearLayout>
+                    <TextView android:id="@id/responseText" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button android:id="@id/btnLogout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:text="@string/button_logout" style="@style/Button.Circular.Blue" />
+            <Button android:id="@id/dev_settings" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

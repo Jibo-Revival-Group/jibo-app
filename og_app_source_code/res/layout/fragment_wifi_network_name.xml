@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/header_wi_fi_network_ssid" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editSSID" android:text="" android:hint="@string/hint_wifi_ssid" android:maxLength="32" android:inputType="text" android:imeOptions="actionDone" style="@style/EditText" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/footer" android:text="@string/label_enter_ssid_prefix" style="@style/SectionFooter" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

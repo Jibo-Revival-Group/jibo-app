@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/share_black" android:enabled="false" android:id="@id/action_share" android:title="Share" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_recycle" android:enabled="false" android:id="@id/action_delete" android:visible="false" android:title="Delete" app:showAsAction="always" />
+</menu>

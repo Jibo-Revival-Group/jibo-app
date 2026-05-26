@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/invite_congrats_title" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="48.0dp" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_marginRight="48.0dp" android:text="@string/invite_congrats_text" style="@style/Body1" />
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="200.0dp" android:layout_height="200.0dp" android:layout_marginTop="@dimen/activity_vertical_margin">
+            <VideoView android:id="@id/video" android:layout_width="match_parent" android:layout_height="match_parent" />
+            <View android:background="@drawable/congrats_video_mask" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </FrameLayout>
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:id="@id/btnViewMyLoop" android:layout_marginTop="35.0dp" android:text="@string/invite_congrats_view_loop" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_16sp" android:layout_gravity="center_horizontal" android:id="@id/btnDontShowAgain" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tiny_padding_4dp" android:text="@string/invite_congrats_dont_show" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</RelativeLayout>

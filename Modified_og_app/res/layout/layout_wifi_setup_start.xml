@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="36.0dp" android:layout_marginRight="36.0dp" android:layout_marginBottom="12.0dp" android:text="@string/wifi_setup_as_owner" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_double_horizontal_margin" android:layout_marginRight="@dimen/activity_double_horizontal_margin" android:text="@string/wifi_setup_subtitle" style="@style/Body2" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/cnt1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_big_margin">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/vertical_margin_20" android:src="@drawable/ic_check" android:tint="@color/jibo_blue" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/invite_family_members" style="@style/Body2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/cnt2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="46.0dp">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/vertical_margin_20" android:src="@drawable/ic_check" android:tint="@color/jibo_blue" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit_jibos_setings" style="@style/Body2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/cnt3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="46.0dp">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/vertical_margin_20" android:src="@drawable/ic_check" android:tint="@color/jibo_blue" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legal_responsibility" style="@style/Body2" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dp" android:text="@string/ownership_hint" style="@style/SectionFooter.Red" />
+    <com.jibo.ui.view.proxima.CustomFontButton android:enabled="false" android:layout_gravity="center_horizontal" android:id="@id/btnImReady" android:layout_marginTop="20.0dp" android:layout_marginBottom="@dimen/default_padding" android:text="@string/okay_im_ready" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+</LinearLayout>

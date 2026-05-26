@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@android:id/closeButton" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin" android:src="@drawable/x_white" android:tint="@color/jibo_blue" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_double_vertical_margin" android:maxWidth="263.0dp" android:text="@string/text_your_account_has_been_deleted" android:lineSpacingExtra="3.0dp" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:src="@drawable/jibo_sad" />
+</LinearLayout>

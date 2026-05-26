@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/activity_big_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnWiFiError1" android:text="@string/button_support_error_1" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnWiFiError2" android:layout_marginTop="1.0dp" android:text="@string/button_support_error_2" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnWiFiError3" android:layout_marginTop="1.0dp" android:text="@string/button_support_error_3" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnWiFiError4" android:layout_marginTop="1.0dp" android:text="@string/button_support_error_4" app:customFont="ProximaNova-Semibold.ttf" style="@style/OptionItem" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:paddingRight="@dimen/activity_double_horizontal_margin" android:text="@string/text_support_info" style="@style/SectionFooter" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

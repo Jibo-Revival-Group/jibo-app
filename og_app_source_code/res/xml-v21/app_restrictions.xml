@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <restriction android:description="@string/sf__app_service_hosts_description" android:title="AppServiceHosts" android:key="AppServiceHosts" android:restrictionType="string" />
+    <restriction android:description="@string/sf__app_service_host_labels_description" android:title="AppServiceHostLabels" android:key="AppServiceHostLabels" android:restrictionType="string" />
+    <restriction android:description="@string/sf__managed_app_oauth_id_description" android:title="ManagedAppOAuthID" android:key="ManagedAppOAuthID" android:restrictionType="string" />
+    <restriction android:description="@string/sf__managed_app_callback_url_description" android:title="ManagedAppCallbackURL" android:key="ManagedAppCallbackURL" android:restrictionType="string" />
+    <restriction android:description="@string/sf__require_cert_auth_description" android:title="RequireCertAuth" android:key="RequireCertAuth" android:defaultValue="false" android:restrictionType="bool" />
+    <restriction android:description="@string/sf__managed_app_cert_alias_description" android:title="ManagedAppCertAlias" android:key="ManagedAppCertAlias" android:restrictionType="string" />
+    <restriction android:description="@string/sf__only_show_authorized_hosts_description" android:title="OnlyShowAuthorizedHosts" android:key="OnlyShowAuthorizedHosts" android:defaultValue="false" android:restrictionType="bool" />
+</restrictions>

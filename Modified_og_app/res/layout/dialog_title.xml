@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.ui.view.FontFitTextView android:id="@id/title" android:paddingLeft="@dimen/dialog_padding" android:paddingTop="@dimen/dialog_top_padding" android:paddingRight="@dimen/dialog_padding" android:paddingBottom="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" app:customFont="ProximaNova-Semibold.ttf" style="@style/Title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />
