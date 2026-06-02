@@ -215,6 +215,36 @@ To redirect `api.jibo.com` to a local mock server:
 ### Option D: Xposed/LSPosed Framework
 - Hook `Commons.setRootEndpoint()` to redirect to local server
 
+### Option E: DevSettingsFragment UI (No APK Modification, No Root)
+
+The app ships a `DevSettingsFragment` accessible via hidden swipe gesture or the `ACTION_DEV_SETTINGS` intent. It has an `setEndpoint()` button that calls:
+
+```java
+Commons.setRootEndpoint(enteredString);
+sharedPreferences.edit().putString("PREF_END_POINT", enteredString).apply();
+```
+
+This changes the endpoint **at runtime** without APK modification.
+
+**Critical caveat:** `OnBoardingActivity.onCreate()` always overwrites `PREF_END_POINT` with `Commons.ALLOWED_ENDPOINTS[2]` (`api.jibo.com`) on fresh launch:
+```java
+// OnBoardingActivity line 86:
+sharedPreferences.edit().putString("PREF_END_POINT", Commons.ALLOWED_ENDPOINTS[2]).apply();
+```
+
+This means the custom endpoint is reset every time the app cold-starts through normal launch. To persist:
+- Access DevSettingsFragment **after** OnBoardingActivity has started (not on the splash screen)
+- OR use Option C/D to prevent the overwrite
+
+**To invoke DevSettingsFragment via ADB (no interaction needed):**
+```bash
+adb shell am start -n com.jibo/.ui.activity.DevSettingsActivity
+# or via broadcast if exported:
+adb shell am broadcast -a com.jibo.ACTION_DEV_SETTINGS
+```
+
+**Option E is the lowest-friction path** for initial testing since it requires no root, no APK signing, and no proxy setup.
+
 ---
 
 ## 7. SigV4 Authentication Considerations
@@ -377,8 +407,10 @@ class JiboMockHandler(BaseHTTPRequestHandler):
             'Media_20160725.GetMedia':    lambda b: [],
             'Media_20160725.ListMedia':   lambda b: [],
             'Media_20160725.RemoveMedia': lambda b: [],
-            # Settings/Skills — returns raw JSON string, not object
-            'Settings_20171219.GetSettings':    lambda b: "{}",
+            # Settings/Skills — returns raw JSON string (array of SkillDataItem)
+            # Each skill has: type, index, view{type, childViews[...]}, data{...}
+            # Item types: skill, subheader, footer, switch, toggle, choice, oauth, connectable, location, time
+            'Settings_20171219.GetSettings':    lambda b: "[]",
             'Settings_20171219.UpdateSettings': lambda b: '{"data":{}}',
             'Settings_20171219.DeleteSettings': lambda b: '{"data":{}}',
             # Keys
@@ -405,8 +437,8 @@ class JiboMockHandler(BaseHTTPRequestHandler):
             # GQA
             'GQA_20160930s.ListAttributions': lambda b: {"attributions": [], "total": 0},
             'GQA_20160930s.SendQuestion':     lambda b: {"answer": "", "attribution": None},
-            # Notification status
-            'Notification_20150505.GetStatus': lambda b: {"status": "delivered"},
+            # Notification status — called with robot accountId as param; "connected" drives WiFi status UI
+            'Notification_20150505.GetStatus': lambda b: {"connected": True, "SSID": "MockWifi"},
         }
         handler = handlers.get(target, lambda b: {})
         return handler(body)
@@ -421,9 +453,15 @@ class JiboMockHandler(BaseHTTPRequestHandler):
             "isActive": True,
             "firstName": "Jibo",
             "lastName": "User",
-            "gender": "other",
-            "birthday": 0,
-            "devices": []
+            "gender": "other",      # Gender enum: male | female | other | they
+            "birthday": 0,          # epoch ms; 0 = not set
+            "devices": [],
+            "photoUrl": None,
+            "phoneNumber": None,
+            "messagingAllowed": True
+            # isIncomplete() = isEmpty(firstName)||isEmpty(lastName)||gender==null
+            # Full Account model: id, email, accessKeyId, secretAccessKey, devices,
+            # firstName, lastName, gender, birthday, isActive, photoUrl, phoneNumber, messagingAllowed
         }
     
     def handle_create(self, body):

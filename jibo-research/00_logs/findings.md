@@ -169,7 +169,7 @@ Content-Type: application/json
 - Key sharing between users: RSA public key exchange, sender encrypts AES key with recipient's RSA public key
 - Data signatures: `SHA256withRSA` with separator `"\n-----SIGNATURE-----\n"`
 
-**SQLCipher:** Encrypted SQLite database used for local data storage.
+**SQLCipher note:** Jibo's own `jiboapp.db` is NOT encrypted (standard `SQLiteOpenHelper`). `libsqlcipher.so` belongs to the Salesforce SDK — see F014 item #4.
 
 ---
 
@@ -325,3 +325,350 @@ File upload/download via `JiboFileClient`: `getFile`, `listFiles`, `removeFile`,
 
 ### VoiceTraining Service (`VoiceTraining_20151103.`)
 File upload via `JiboFileClient`: `uploadFile(path, file)` → `FileLink`
+
+---
+
+## F016 — FCM Push Message Contract (12 Types)
+
+All push notification type strings handled by `JiboFirebaseMessagingService.onMessageReceived`:
+
+| Type | UI Effect |
+|------|-----------|
+| `jot_created_silent` | Silent jot sync |
+| `jot_created_tagged` | Sync + notification |
+| `loop_changed_silent` | Loop sync |
+| `loop_invited` | Notification → tab 0 (loops) |
+| `loop_accepted` | Loop sync |
+| `key_needed_silent` | Start `KeyRequestingSharingService ACTION_KEY_REQUESTED` |
+| `key_shared_silent` | Start `KeyRequestingSharingService ACTION_KEY_SHARED` |
+| `media_deleted_silent` | Start `MediaDeletingService` with `EXTRA_FROM_OUTSIDE=true` |
+| `key_timeout_silent` | Add loopId to `PREF_LOOPS_IN_TIMEOUT` |
+| `media_created_silent` | 4s delay → sync media → optional notification (tab 1) |
+| `version_installed` | Show notification → `release_notes_url` |
+| `version_updated` | Show notification → `release_notes_url` |
+
+FCM data fields: `type`, `loopId`, `path`, `loc-args`, `id`  
+Notification channel ID: `"my_channel_01"` (name: `"channel_name"`)
+
+---
+
+## F017 — Background Service Actions Reference
+
+### KeyRequestingSharingService
+- `ACTION_CHECK_ALL_LOOPS` — iterate entity table (type=8), trigger REQUEST_KEY for each accepted loop
+- `ACTION_REQUEST_KEY(loopId)` — call `Key.createRequest(loopId, publicKey)` if no local key
+- `ACTION_KEY_REQUESTED(loopId)` — list incoming requests, encrypt AES key for each, call `Key.share`
+- `ACTION_KEY_SHARED(loopId, id)` — call `Key.getRequest(id)`, save decrypted key locally
+- Broadcasts `ACTION_KEY_SAVED` (local) when key received
+
+### KeysCheckerJobService (Firebase JobDispatcher)
+- Scheduled via `SyncHelper.m10175a()` every 120–180 seconds
+- Calls `ACTION_CHECK_ALL_LOOPS` only
+
+### DeviceRegistrationService
+- FCM token: `FirebaseInstanceId.getInstance().getToken()`
+- Instance ID: `getId() + new SecureRandom().nextLong()`
+- Saves: `PREF_PUSH_SERVICE_TOKEN`, `PREF_INSTANCE_ID`
+- Calls: `Push_20160729.AddDevice`
+
+### DeviceUnRegistrationService (on logout)
+- Reads `PREF_INSTANCE_ID`
+- Clears ALL SharedPreferences (`SharedPreferencesUtil.m11434b()`)
+- Calls `KeyManager.logout(context)` — deletes all local key files from `filesDir`
+- Calls `Push_20160729.removeDevice(instanceId)`
+
+### MessageSendingService
+- Generates thumbnails: 720×405 (display), 330×330 (robot)
+- If `isEncrypted`: AES-encrypts files via `KeyManager.obtainKeyHolder(loopId).encodeFile()`
+- Uploads to `Media_20160725.create` (with `isEncrypted` flag)
+- Failed messages get ID `"TEMP_FAILED_" + System.currentTimeMillis()`
+
+### MediaDeletingService
+- `EXTRA_IDS` (String[]) — paths to delete
+- `EXTRA_FROM_OUTSIDE` (boolean) — if true, skip API call (FCM-triggered local-only deletion)
+- Permission: owner OR uploader OR `EXTRA_FROM_OUTSIDE`
+
+### SyncHelper Bitmask
+`1=loops | 2=accounts | 4=jots | 8=media | 16=delete-flag`
+
+---
+
+## F018 — SharedPreferences Schema
+
+File key: `getString(R.string.app_name)` = `"Jibo"`
+
+| Key | Type | Default | Notes |
+|-----|------|---------|-------|
+| `PREF_APP_OPEN_NUM` | int | 0 | Launch counter |
+| `PREF_PUSH_SERVICE_TOKEN` | String | null | FCM token |
+| `PREF_INSTANCE_ID` | String | null | instanceId + SecureRandom long |
+| `PREF_MEDIA_TAB_MODE` | int | 0 | Gallery layout mode |
+| `"Loop"` | String (JSON) | null | Last selected Loop |
+| `PREF_PARENTS_MEMBERS` | String (CSV) | null | Guardian member IDs |
+| `PREF_ENCRYPTION_ENABLED` | boolean | true | Global encryption on/off |
+| `PREF_LOOPS_IN_TIMEOUT` | String (CSV) | null | Loops with key timeout |
+| `PREF_LOOPS_ALERTED_TIMEOUT` | String (CSV) | null | Loops already alerted |
+| `PREF_LOOPS_NO_HOLIDAYS` | String (CSV) | null | Loops with holidays off |
+| `PREF_PUSHES_ON_GALLERY_CONTENT` | boolean | true | Gallery push toggle |
+| `PREF_IS_PERSONAL_REPORT_DIALOG_SHOWN` | boolean | false | One-time dialog flag |
+| `PREF_FIRST_TIME_TIPS` | boolean | true | First tips launch flag |
+| `PREF_SHOW_INVITE_CONGRATS` | boolean | true | Invite congrats flag |
+| `PREF_ACQUISITION` | boolean | false | Attribution flag |
+| **`PREF_END_POINT`** | **String** | **api.jibo.com** | **Custom endpoint — revival path** |
+
+**Note:** `OnBoardingActivity.onCreate()` always overwrites `PREF_END_POINT` to `Commons.ALLOWED_ENDPOINTS[2]` (`api.jibo.com`) on fresh launch. APK patch or access via `DevSettingsFragment` required to persist a custom endpoint.
+
+---
+
+## F019 — Complete Data Model Schemas
+
+### Loop
+`id, name, owner (accountId), robot (accountId), robotFriendlyId, members (List<Member>), created (Long), updated (Long), isSuspended (Boolean)`
+
+### Member
+`id, loopId, accountId, account (MemberAccount{id,email,firstName,lastName,photoUrl}), enrolled (Enrolled{voice:Boolean, face:Boolean}), status (InvitationStatus: invited|accepted|declined|removed), type (InvitationType: incoming|outgoing), nickname, phoneticName, legalGuardianId, created (Long), agreementId`  
+`isEnrolled()` = `enrolled.voice || enrolled.face`
+
+### Message (Jot)
+`id, loopId, content, sender (accountId), parts (List<MessagePart>), tags (List<String>), created (Long), isRead (Boolean), isEncrypted (Boolean)`
+
+### Account (full model)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | String | Account UUID |
+| `email` | String | User email |
+| `accessKeyId` | String | AWS-style credential |
+| `secretAccessKey` | String | AWS-style credential |
+| `devices` | List<Device> | Registered push devices |
+| `firstName` | String | First name |
+| `lastName` | String | Last name |
+| `gender` | Gender enum | `male \| female \| other \| they` |
+| `birthday` | Long | Epoch ms (null-able) |
+| `isActive` | Boolean | Account activation status |
+| `photoUrl` | String | Profile photo URL |
+| `phoneNumber` | String | Phone (optional) |
+| `messagingAllowed` | Boolean | SMS/messaging consent |
+
+`isIncomplete()` = `isEmpty(firstName) || isEmpty(lastName) || gender == null`
+
+### Entity Type Constants (DB)
+`type=1` → Account (current user)  
+`type=2` → Members / contacts  
+`type=8` → Loops
+
+### MemberComparator (sort order in UI)
+1. Owner first
+2. Then by `nickname` (if set) or `firstName` alphabetically
+3. Robot member excluded from sort
+
+---
+
+## F020 — SECURITY: Hardcoded AWS Credentials in LoopHelper.suspendLoop()
+
+**File:** `com.jibo.aws.integration.helpers.LoopHelper`  
+**Method:** `suspendLoop()` — approximately line 279  
+**Severity:** HIGH
+
+`suspendLoop()` constructs a `BasicAWSCredentials(accessKeyId, secretAccessKey)` instance using **literal hardcoded string values** embedded in the compiled DEX bytecode. These are not the user's credentials — they appear to be service-level or test credentials stored directly in the application.
+
+**Values:** REDACTED per security policy. The strings are plaintext in the DEX and recoverable via JADX decompilation.
+
+**Impact:** Any party who decompiles the APK (trivially possible with JADX) can extract these credentials. If the credentials are still valid and have service permissions, they could be used to interact with the Jibo backend API signed as that identity.
+
+**Location documented for revival purposes:** These credentials, if still valid, would authenticate `suspendLoop` calls without a user account — relevant for server mock testing to understand what signed identity the server expects for loop suspension operations.
+
+---
+
+## F024 — Skills JSON Schema (Settings_20171219.GetSkillsJson)
+
+**Class:** `com.jibo.p019ui.helpers.skills.SkillsJsonParser`
+
+The Skills settings endpoint returns either a JSON array (multiple skills) or a single JSON object (one skill). The app parses it into `DataItems.SkillDataItem` objects.
+
+### SkillDataItem Structure
+
+```json
+[
+  {
+    "type": "skill",
+    "index": 0,
+    "view": {
+      "type": "skill",
+      "childViews": [
+        {
+          "type": "<item-type>",
+          "index": 0,
+          "key": "<pref-key>",
+          ...
+        }
+      ]
+    },
+    "data": {
+      "<pref-key>": <current-value>,
+      ...
+    }
+  }
+]
+```
+
+### Item Types
+
+| `type` value | DataItem class | DataValue class | Notes |
+|---|---|---|---|
+| `skill` | `SkillDataItem` | — | Top-level skill container |
+| `subheader` | `SubheaderDataItem` | — | Section header (display only) |
+| `footer` | `FooterDataItem` | — | Footer (display only) |
+| `switch` | `SwitchDataItem` | `BooleanDataValue` | Toggle switch |
+| `toggle` | `ToggleDataItem` | `BooleanDataValue` | Same as switch |
+| `choice` | `ChoiceDataItem` | `IntegerDataValue` | Multiple-choice selector |
+| `oauth` | `OauthDataItem` | `OauthDataValue` | OAuth-connected skill |
+| `connectable` | `ConnectableDataItem` | `ConnectableDataValue` | Connectable skill item |
+| `location` | `LocationDataItem` | `LocationDataValue` | Location picker |
+| `locationTextField` | `LocationDataItem` | `LocationDataValue` | Location text input |
+| `time` | `TimeDataItem` | `TimeDataValue` | Time picker |
+
+### Skills sorted by `view.index` field
+
+### `isConfigured()` logic
+- If data has ≤7 keys: checks all values are non-false (ignoring `offerProactively` key)
+- If data has >7 keys: considered configured
+
+### `TextLinksMatcher`
+- Skill JSON can embed link placeholder `"JIBO_SETTINGS"` → navigates to `RobotSettingsFragment`
+
+### Icon names (matched to drawables)
+`ic_bike`, `ic_drive`, `ic_transport`, `ic_walk`, `personal_report_icon`
+
+---
+
+## F021 — TabbedActivity Navigation Map
+
+**Class:** `com.jibo.p019ui.activity.TabbedActivity`
+
+Main app activity after login. Fragment-based tab navigation:
+
+### Tab Index Map
+
+| Index | Fragment (complete state) | Fragment (initial — no loops) | Description |
+|-------|--------------------------|-------------------------------|-------------|
+| 0 | `JiboDetailsFragment` | `NoLoopsFragment` | Jibo/Loops home |
+| 1 | `MediaFragment` | `MediaFragment` (hidden) | Gallery |
+| 2 | `TipsListFragment` | `TipsListFragment` | Tips / guided experiences |
+| 3 | *(Salesforce launch)* | *(Salesforce launch)* | Customer support |
+
+- **Initial state** (no loops): tab 1 (gallery) visibility = `GONE`; all others visible
+- **Complete state** (has loops): all 4 tabs visible
+- Tab 3 triggers `JiboSupport.m9868a(activity)` (launchKnowledgeUI) — no Fragment, opens Salesforce
+
+### Intent Extras (from notifications / other activities)
+
+| Extra Key | Type | Effect |
+|-----------|------|--------|
+| `ARG_FROM_NOTIFICATION` | boolean | Logs analytics event |
+| `ARG_LOOP_ID` | String | Pre-selects matching loop |
+| `ARG_TAB_SELECTED` | int | Selects tab by index |
+| `ARG_CURRENT_TAB` | int | Saved/restored tab on rotation |
+| `ARG_ENTITY_SELECTED` | String | Opens LoopInviteDetailsActivity for that loop if invited |
+
+### Loader IDs
+
+- `loader_default_account` (type=1): if empty → redirects to OnBoardingActivity (forced logout)
+- `loader_loops` (type=8): populates loop selector dropdown; saves last selected loop to `PREF_LOOP`
+- `loader_jots_unread`: counts unread jots → badge on tab 0 (excludes `TEMP_SENDING_*` / `TEMP_FAILED_*`)
+
+### Loop Selector Behavior
+
+- Tap title bar on tab 0 → animated slide-down overlay with all loops listed
+- Tap loop → if `isMemberInvited`: open `LoopInviteDetailsActivity`; if accepted: call `EntityData.m10117a(loop)` to set active loop
+- Tap null/add button → launch `WifiActivity` (start WiFi onboarding to add a robot)
+- After LoopInviteDetailsActivity returns (code 1006): auto-collapses selector after 3 seconds
+
+### Activity Result Codes
+
+| Request Code | From | Action |
+|---|---|---|
+| 1001 | AccountSettings | Triggers accounts sync (`SyncHelper.m10178b`) |
+| 1003 | AvatarSelectionFragment | Updates robot info for current loop |
+| 1006 | LoopInviteDetailsActivity | Shows loop selector, auto-collapses after 3s |
+
+### On Resume
+Checks if `PREF_PUSH_SERVICE_TOKEN` is empty → starts `DeviceRegistrationService`
+
+---
+
+## F022 — Encryption Passphrase Backup UX
+
+---
+
+## F023 — RobotSettings Screen and StatusContainer Usage
+
+**Class:** `com.jibo.p019ui.fragment.settings.RobotSettingsFragment`
+
+### Settings Screen Features
+
+- **Jibo name** (`txtJiboName`) — editable via `ChangeLoopNameDialog`; saves via `Loop_20160324.updateLoop`
+- **WiFi status** (`txtJiboWifi`) — shows SSID or "no connection" (red text) based on `StatusContainer.getConnected()`
+- **Location** (`txtJiboLocation`) — shows city name + timezone from `Robot.payload`; navigates to `LocationFragment`
+- **Remote access toggle** (`mRemoteSwitch`) — `Robot.payload.remoteEnabled` field; saves via `RobotProperties.updateRobot`
+- **Avatar** — displayed via `RobotHelper.getAvatar(robot)` → image level index; changed via `AvatarSelectionFragment`
+- **Passphrase button** — state depends on backup existence (from `Key.restoreEncryptedKey`) and local key presence
+- **Holidays** → `HolidaySettingsFragment`
+- **About** → `RobotAboutFragment` (shows serial, OS version, owner name/email)
+
+### StatusContainer.getConnected() Usage (CRITICAL for mock)
+
+`Notification_20150505.getStatus(loop.getRobot())` is called with the **robot's accountId** (not a notification ID).
+
+The `StatusContainer` response must include:
+```json
+{
+  "connected": true/false,
+  "SSID": "...",   // optional
+  ...
+}
+```
+
+If `connected == true`: shows WiFi SSID name from `RobotHelper.getWifiName(robot)` in green text.
+If `connected == false` or error: shows "Jibo status no connection" in red text.
+
+**Mock server fix needed:** The current mock returns `{"status": "delivered"}` for `Notification_20150505.GetStatus` — should return `{"connected": true}` for revival to show online status.
+
+### RobotAboutFragment
+
+Displays from `Robot.payload`:
+- `osVersion` → `RobotHelper.getRobotOS(robot)` — `payload.platform` or similar field
+- `serialName` → `RobotHelper.getRobotSerialName(robot)` — `payload.serialNumber`
+- Owner name/email from `LoopHelper.getOwner(loop)` → `member.account.fullName` + `member.account.email`
+
+---
+
+## F022 — Encryption Passphrase Backup UX
+
+**Class:** `com.jibo.p019ui.fragment.dialog.passphrase.LoopPassphraseUtils`
+
+The app prompts users to create a passphrase to back up their loop's AES key. Without a backup, the key can only be recovered from the Android Keystore on the original device.
+
+### DialogType Enum (11 types)
+`FIRST_TIME`, `MEDIA_ADDED`, `WEEK_AFTER`, `FROM_SETTINGS`, `ON_RECONNECT_TO_JIBO`, `ON_RECONNECT_TO_JIBO_NO_BACKUP`, `ON_CANCEL`, `ON_SET`, `RESTORE`, `RESTORE_BY_TIMEOUT`, `NO_BACKUP_BY_TIMEOUT`
+
+### Dialog Cadence (automatic prompts)
+1. **FIRST_TIME** — shown immediately if no passphrase configured for the loop
+2. **MEDIA_ADDED** — shown after 24 hours (86,400,000 ms) if first-time dialog was shown
+3. **WEEK_AFTER** — shown after 7 days (604,800,000 ms) if media_added was shown
+4. Then stops automatically
+
+### SharedPreferences Keys (Passphrase)
+| Key | Type | Purpose |
+|-----|------|---------|
+| `PREFERENCE_LOOP_PASSPHRASE_DIALOG_SHOW_DATE` | Long (epoch ms) | Last time dialog was shown |
+| `PREFERENCE_LAST_SHOWN_DIALOG_TYPE` | String | Last dialog type shown |
+| `PREFERENCE_PASSPHRASE_LOOP_{loopId}` | boolean | Whether passphrase already set for this loop |
+
+### Dialog Variants
+- `LoopPassphraseSetDialog` — create/backup passphrase (request code 121)
+- `LoopPassphraseRestoreDialog` — restore key from passphrase (request code 122)
+- `LoopPassphraseInfoDialog` — display passphrase info (request code 123)
+
+### Key Backup Check
+`m10584a(loopId, fragment, listener)` calls `Key_20160201.restoreEncryptedKey(loopId, null)` — if it succeeds, a backup exists; if it errors (404/not found), no backup exists.

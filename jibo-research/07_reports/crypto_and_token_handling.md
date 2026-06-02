@@ -211,6 +211,21 @@ The library stores 4 obfuscated string values. Strings visible via `strings` too
 
 ---
 
+## 9b. Hardcoded Service Credentials (SECURITY FINDING)
+
+**Class:** `com.jibo.aws.integration.helpers.LoopHelper`  
+**Method:** `suspendLoop()` (~line 279)
+
+The `suspendLoop()` method constructs a `BasicAWSCredentials` object with **literal hardcoded `accessKeyId` and `secretAccessKey` strings** embedded directly in the compiled DEX bytecode.
+
+- These are **not user credentials** — they appear to be service-level or test-tier credentials for the `suspendLoop` operation
+- Values are plaintext in the DEX; recoverable in seconds via JADX or `strings` on `classes.dex`
+- **Values:** REDACTED per security policy
+
+**Risk:** Any party with the APK can extract these credentials. If still valid and authorized, they could be used to call the Jibo backend API without user authentication for the `suspendLoop` operation.
+
+---
+
 ## 10. Token/Key Lifecycle
 
 | Token/Key | Lifespan | Stored In | Cleared On |
@@ -227,6 +242,7 @@ The library stores 4 obfuscated string values. Strings visible via `strings` too
 
 | Issue | Severity | Notes |
 |-------|---------|-------|
+| Hardcoded AWS credentials in LoopHelper.suspendLoop() | HIGH | Service-level credentials in plaintext DEX; see Section 9b |
 | Weak APK signing (SHA1withRSA, 1024-bit) | MEDIUM | Historical, pre-2018 |
 | Hard-coded IV for AES encryption | MEDIUM | Same key → same ciphertext for same input |
 | QR XOR uses fixed key | LOW | Only cosmetic protection; token is real security |

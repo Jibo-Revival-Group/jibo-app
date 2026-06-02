@@ -59,7 +59,7 @@ com.jibo
 │
 ├── p018db/                  -- Database layer (obfuscated package)
 │   ├── DatabaseContract     -- Table/URI definitions
-│   ├── DatabaseProvider     -- ContentProvider (SQLCipher)
+│   ├── DatabaseProvider     -- ContentProvider (standard SQLite, NOT SQLCipher)
 │   ├── EntityData           -- Data singleton (model layer)
 │   └── LoopsAndLastMessagesContentProvider
 │
@@ -180,6 +180,14 @@ com.jibo
 | `com.jibo.aws.integration.aws.services.accountAdmin.JiboAccountAdminClient` | `JiboAccountAdminClient` | HIGH | Single method: `activateById` |
 | `com.jibo.p018db.DatabaseHelper` | `JiboDatabaseHelper` | HIGH | Standard SQLiteOpenHelper, unencrypted; creates `jiboapp.db` (v22) |
 | `com.jibo.p018db.EntityData` | `EntityData` / `AppDataStore` | HIGH | Singleton data layer, holds all cached API entities |
+| `com.jibo.p019ui.activity.TabbedActivity` | `TabbedActivity` | HIGH | Main 4-tab activity post-login |
+| `com.jibo.p019ui.fragment.dialog.passphrase.LoopPassphraseUtils` | `LoopPassphraseUtils` | HIGH | Passphrase backup/restore dialog orchestration |
+| `TabbedActivity.f9872n` | `FRAGMENT_CLASSES_COMPLETE` | HIGH | Tab fragment class names for complete state (4 tabs) |
+| `TabbedActivity.f9873o` | `FRAGMENT_CLASSES_INITIAL` | HIGH | Tab fragment class names for initial state (no loops) |
+| `TabbedActivity.f9876p` | `currentTabIndex` | HIGH | Currently selected tab (0-3) |
+| `TabbedActivity.m10283a(i, force)` | `selectTab` | HIGH | Switch to tab i, optionally force-replace |
+| `TabbedActivity.m10278C()` | `showLoopSelector` | HIGH | Slide down loop picker overlay with animation |
+| `TabbedActivity.m10279D()` | `hideLoopSelector` | HIGH | Slide up loop picker overlay with animation |
 
 ---
 
@@ -276,3 +284,107 @@ CREATE INDEX media_index_loop_created ON media(created, loopId);
 - Entities stored as JSON blobs in the `data` column
 - Media encryption status tracked via `isEncrypted` flag
 - `libsqlcipher.so` present in APK is used exclusively by the Salesforce Service SDK (SmartStore), not by Jibo's own database code
+
+### Entity Type Constants
+
+| `type` Value | Entity Kind |
+|---|---|
+| `1` | Account (current authenticated user) |
+| `2` | Members / contacts |
+| `8` | Loops (family groups) |
+
+---
+
+## Data Models
+
+### Loop
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | String | Loop UUID |
+| `name` | String | Display name |
+| `owner` | String | accountId of owner |
+| `robot` | String | accountId of robot member |
+| `robotFriendlyId` | String | Human-readable robot ID |
+| `members` | List<Member> | All loop members |
+| `created` | Long | Epoch ms |
+| `updated` | Long | Epoch ms |
+| `isSuspended` | Boolean | Whether loop is suspended |
+
+### Member
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | String | Member UUID |
+| `loopId` | String | Parent loop ID |
+| `accountId` | String | User account ID |
+| `account` | MemberAccount | `{id, email, firstName, lastName, photoUrl}` |
+| `enrolled` | Enrolled | `{voice: Boolean, face: Boolean}` |
+| `status` | InvitationStatus | `invited \| accepted \| declined \| removed` |
+| `type` | InvitationType | `incoming \| outgoing` |
+| `nickname` | String | Display nickname |
+| `phoneticName` | String | Pronunciation hint for Jibo |
+| `legalGuardianId` | String | Guardian accountId for child members |
+| `created` | Long | Epoch ms |
+| `agreementId` | String | EULA/agreement ID |
+
+`isEnrolled()` = `enrolled.voice || enrolled.face`
+
+### Message (Jot)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | String | Message UUID |
+| `loopId` | String | Parent loop ID |
+| `content` | String | Text content |
+| `sender` | String | accountId of sender |
+| `parts` | List<MessagePart> | Attached media parts |
+| `tags` | List<String> | Message tags |
+| `created` | Long | Epoch ms |
+| `isRead` | Boolean | Read status |
+| `isEncrypted` | Boolean | Whether content is AES-encrypted |
+
+### MessagePart types
+- `Media.TYPE_THUMBNAIL` → file with `.thumb` suffix
+- `Media.TYPE_THUMBNAIL_ROBOT` → file with `.robot_thumb` suffix (330×330 px)
+
+---
+
+## Sync Flag Bitmask
+
+| Flag | Decimal | Description |
+|------|---------|-------------|
+| Loops | `1` | Sync Loop entities |
+| Accounts | `2` | Sync Account entities |
+| Jots | `4` | Sync Jot/Message entities |
+| Media | `8` | Sync Media metadata |
+| Delete | `16` | OR'd with Media flag for delete sync |
+| Loops+Jots+Media | `13` | Common combined sync |
+| Accounts+Jots+Media | `28` | Full content sync |
+
+---
+
+## SharedPreferences Keys
+
+**File:** SharedPreferences under `"Jibo"` (value of `R.string.app_name`)
+
+| Key | Type | Default | Purpose |
+|-----|------|---------|---------|
+| `PREF_APP_OPEN_NUM` | int | 0 | Launch counter |
+| `PREF_PUSH_SERVICE_TOKEN` | String | null | FCM device token |
+| `PREF_INSTANCE_ID` | String | null | `instanceId + SecureRandom long` |
+| `PREF_MEDIA_TAB_MODE` | int | 0 | Gallery layout (list/grid) |
+| `"Loop"` | String (Gson JSON) | null | Last selected Loop object |
+| `PREF_PARENTS_MEMBERS` | String (CSV) | null | Guardian member IDs |
+| `PREF_ENCRYPTION_ENABLED` | boolean | true | Global AES encryption toggle |
+| `PREF_LOOPS_IN_TIMEOUT` | String (CSV) | null | Loops with key exchange timeout |
+| `PREF_LOOPS_ALERTED_TIMEOUT` | String (CSV) | null | Loops already shown timeout alert |
+| `PREF_LOOPS_NO_HOLIDAYS` | String (CSV) | null | Loops with holidays disabled |
+| `PREF_PUSHES_ON_GALLERY_CONTENT` | boolean | true | Gallery push notification toggle |
+| `PREF_IS_PERSONAL_REPORT_DIALOG_SHOWN` | boolean | false | One-time dialog shown flag |
+| `PREF_FIRST_TIME_TIPS` | boolean | true | First tips launch flag |
+| `PREF_SHOW_INVITE_CONGRATS` | boolean | true | Invite congrats banner flag |
+| `PREF_ACQUISITION` | boolean | false | Attribution acquisition flag |
+| **`PREF_END_POINT`** | **String** | **api.jibo.com** | **Custom API endpoint (critical revival path)** |
+
+**Warning:** `OnBoardingActivity.onCreate()` unconditionally overwrites `PREF_END_POINT` to `api.jibo.com` on each cold start via `Commons.ALLOWED_ENDPOINTS[2]`. DevSettingsFragment endpoint override only persists within the same session unless the overwrite is patched.
