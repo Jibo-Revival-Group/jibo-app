@@ -1,0 +1,150 @@
+package com.salesforce.androidsdk;
+
+public final class R {
+   public static final class array {
+      public static final int oauthScopes = 2130903044;
+   }
+
+   public static final class id {
+      public static final int adjust_height = 2131296315;
+      public static final int adjust_width = 2131296316;
+      public static final int auto = 2131296328;
+      public static final int buttonPanel = 2131296416;
+      public static final int dark = 2131296512;
+      public static final int fingerprint_container = 2131296565;
+      public static final int icon_only = 2131296592;
+      public static final int light = 2131296698;
+      public static final int manage_space_layout = 2131296723;
+      public static final int none = 2131296753;
+      public static final int sf__accounts_group = 2131296908;
+      public static final int sf__add_account_button = 2131296909;
+      public static final int sf__apply_button = 2131296910;
+      public static final int sf__auth_container_phone = 2131296911;
+      public static final int sf__cancel_button = 2131296912;
+      public static final int sf__fingerprint_description = 2131296913;
+      public static final int sf__fingerprint_icon = 2131296914;
+      public static final int sf__fingerprint_status = 2131296915;
+      public static final int sf__layout_root = 2131296924;
+      public static final int sf__menu_clear_cookies = 2131296925;
+      public static final int sf__menu_clear_custom_url = 2131296926;
+      public static final int sf__menu_pick_server = 2131296927;
+      public static final int sf__menu_reload = 2131296928;
+      public static final int sf__oauth_webview = 2131296929;
+      public static final int sf__passcode_error = 2131296930;
+      public static final int sf__passcode_forgot = 2131296931;
+      public static final int sf__passcode_instructions = 2131296932;
+      public static final int sf__passcode_text = 2131296933;
+      public static final int sf__passcode_title = 2131296934;
+      public static final int sf__picker_custom_label = 2131296935;
+      public static final int sf__picker_custom_url = 2131296936;
+      public static final int sf__server_list_group = 2131296937;
+      public static final int sf__show_custom_url_edit = 2131296938;
+      public static final int sf__switcher_apply_button = 2131296939;
+      public static final int sf__use_password_button = 2131296940;
+      public static final int spacer = 2131296952;
+      public static final int standard = 2131296959;
+      public static final int wide = 2131297077;
+   }
+
+   public static final class layout {
+      public static final int sf__account_switcher = 2131427625;
+      public static final int sf__custom_server_url = 2131427626;
+      public static final int sf__fingerprint_dialog = 2131427627;
+      public static final int sf__login = 2131427630;
+      public static final int sf__manage_space = 2131427631;
+      public static final int sf__passcode = 2131427632;
+      public static final int sf__server_picker = 2131427633;
+      public static final int sf__server_picker_list = 2131427634;
+   }
+
+   public static final class menu {
+      public static final int sf__clear_custom_url = 2131492880;
+      public static final int sf__login = 2131492881;
+   }
+
+   public static final class string {
+      public static final int account_type = 2131755046;
+      public static final int androidPushNotificationClientId = 2131755060;
+      public static final int api_version = 2131755062;
+      public static final int app_name = 2131755063;
+      public static final int app_package = 2131755064;
+      public static final int common_google_play_services_enable_button = 2131755203;
+      public static final int common_google_play_services_enable_text = 2131755204;
+      public static final int common_google_play_services_enable_title = 2131755205;
+      public static final int common_google_play_services_install_button = 2131755206;
+      public static final int common_google_play_services_install_text = 2131755207;
+      public static final int common_google_play_services_install_title = 2131755208;
+      public static final int common_google_play_services_notification_ticker = 2131755210;
+      public static final int common_google_play_services_unknown_issue = 2131755211;
+      public static final int common_google_play_services_unsupported_text = 2131755212;
+      public static final int common_google_play_services_update_button = 2131755213;
+      public static final int common_google_play_services_update_text = 2131755214;
+      public static final int common_google_play_services_update_title = 2131755215;
+      public static final int common_google_play_services_updating_text = 2131755216;
+      public static final int common_google_play_services_wear_update_text = 2131755217;
+      public static final int common_open_on_phone = 2131755218;
+      public static final int common_signin_button_text = 2131755219;
+      public static final int common_signin_button_text_long = 2131755220;
+      public static final int oauthRedirectURI = 2131755567;
+      public static final int oauth_display_type = 2131755568;
+      public static final int remoteAccessConsumerKey = 2131755619;
+      public static final int sf__access_token_revoked = 2131755662;
+      public static final int sf__add_new_account = 2131755663;
+      public static final int sf__app_service_host_labels_description = 2131755664;
+      public static final int sf__app_service_hosts_description = 2131755665;
+      public static final int sf__auth_login_production = 2131755666;
+      public static final int sf__auth_login_sandbox = 2131755667;
+      public static final int sf__clear_cookies = 2131755668;
+      public static final int sf__custom_url_button = 2131755669;
+      public static final int sf__fingerprint_cancel = 2131755670;
+      public static final int sf__fingerprint_description = 2131755671;
+      public static final int sf__fingerprint_failed = 2131755672;
+      public static final int sf__fingerprint_hint = 2131755673;
+      public static final int sf__fingerprint_success = 2131755674;
+      public static final int sf__generic_authentication_error = 2131755675;
+      public static final int sf__generic_authentication_error_title = 2131755676;
+      public static final int sf__generic_error = 2131755677;
+      public static final int sf__invalid_server_url = 2131755695;
+      public static final int sf__jwt_authentication_error = 2131755696;
+      public static final int sf__login_title = 2131755697;
+      public static final int sf__manage_space_confirmation = 2131755698;
+      public static final int sf__managed_app_callback_url_description = 2131755699;
+      public static final int sf__managed_app_cert_alias_description = 2131755700;
+      public static final int sf__managed_app_error = 2131755701;
+      public static final int sf__managed_app_oauth_id_description = 2131755702;
+      public static final int sf__only_show_authorized_hosts_description = 2131755703;
+      public static final int sf__passcode_change_instructions = 2131755704;
+      public static final int sf__passcode_confirm_instructions = 2131755705;
+      public static final int sf__passcode_confirm_title = 2131755706;
+      public static final int sf__passcode_create_instructions = 2131755707;
+      public static final int sf__passcode_create_title = 2131755708;
+      public static final int sf__passcode_enter_instructions = 2131755709;
+      public static final int sf__passcode_enter_title = 2131755710;
+      public static final int sf__passcode_final = 2131755711;
+      public static final int sf__passcode_forgot_string = 2131755712;
+      public static final int sf__passcode_logout_confirmation = 2131755713;
+      public static final int sf__passcode_logout_no = 2131755714;
+      public static final int sf__passcode_logout_yes = 2131755715;
+      public static final int sf__passcode_min_length = 2131755716;
+      public static final int sf__passcode_try_again = 2131755717;
+      public static final int sf__passcodes_dont_match = 2131755718;
+      public static final int sf__pick_server = 2131755719;
+      public static final int sf__reload = 2131755720;
+      public static final int sf__require_cert_auth_description = 2131755721;
+      public static final int sf__server_picker_title = 2131755722;
+      public static final int sf__server_url_add_title = 2131755723;
+      public static final int sf__server_url_default_apply = 2131755724;
+      public static final int sf__server_url_default_cancel = 2131755725;
+      public static final int sf__server_url_default_custom_label = 2131755726;
+      public static final int sf__server_url_default_custom_url = 2131755727;
+      public static final int sf__server_url_edit_title = 2131755728;
+      public static final int sf__server_url_reset = 2131755729;
+      public static final int sf__ssl_error = 2131755730;
+      public static final int sf__ssl_expired = 2131755731;
+      public static final int sf__ssl_id_mismatch = 2131755732;
+      public static final int sf__ssl_not_yet_valid = 2131755733;
+      public static final int sf__ssl_unknown_error = 2131755734;
+      public static final int sf__ssl_untrusted = 2131755735;
+      public static final int sf__switch_account = 2131755736;
+   }
+}

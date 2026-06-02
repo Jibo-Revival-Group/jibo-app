@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/default_padding" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_double_vertical_margin" android:text="@string/text_wifi_success_screen_title1" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/txtInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="@dimen/default_padding" android:layout_marginRight="@dimen/activity_horizontal_margin" android:text="@string/text_wifi_success_screen_info1" android:layout_below="@android:id/title" android:layout_centerHorizontal="true" style="@style/Body1" />
+    <FrameLayout android:layout_width="200.0dp" android:layout_height="match_parent" android:layout_above="@id/btnContinue" android:layout_below="@id/txtInfo" android:layout_centerHorizontal="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/jibo_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/getting_ready" />
+    </FrameLayout>
+    <com.jibo.ui.view.proxima.CustomFontButton android:id="@id/btnContinue" android:layout_marginBottom="76.0dp" android:text="@string/textlink_learn_more_about_jibo" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue.Bordered" />
+</RelativeLayout>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_15sp" android:textColor="@color/white" android:gravity="center" android:id="@id/viewNetworkDown" android:background="@color/firecracker" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height" android:text="@string/text_network_down" app:customFont="ProximaNova-Semibold.ttf"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

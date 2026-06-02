@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.salesforce.android.service.common.p023ui.views.SalesforceTextView
+        android:id="@+id/pick_list_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-4dp"
+        android:layout_marginStart="4dp"
+        style="@style/SalesforceStyleTextFormLabel"/>
+    <FrameLayout
+        android:id="@+id/pick_list_spinner_frame"
+        android:background="?attr/editTextBackground"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/pick_list_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?attr/salesforcePickListSpinnerStyle"/>
+    </FrameLayout>
+</merge>

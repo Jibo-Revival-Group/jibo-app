@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.p019ui.view.FontFitTextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:gravity="center_vertical"
+    android:id="@android:id/text1"
+    android:paddingLeft="@dimen/dialog_padding"
+    android:paddingRight="@dimen/dialog_padding"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+    android:checkMark="?android:attr/listChoiceIndicatorSingle"
+    android:maxLines="1"
+    style="@style/Body2"/>

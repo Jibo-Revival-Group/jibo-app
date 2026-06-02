@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@id/swipeRefreshLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView android:id="@android:id/list" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <FrameLayout android:id="@android:id/empty" android:background="@color/colorWindowBackground" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="78.0dp" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <ImageView android:layout_gravity="center" android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_music_radio" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:layout_gravity="center|bottom" android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="68.0dp" android:text="" android:lineSpacingExtra="3.0dp" style="@style/Body1" />
+    </FrameLayout>
+</RelativeLayout>

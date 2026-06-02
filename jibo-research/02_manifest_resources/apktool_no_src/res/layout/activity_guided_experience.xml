@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/buttom_panel" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <View android:background="@color/pearl" android:layout_width="match_parent" android:layout_height="@dimen/divider_thickness" />
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+            <ImageButton android:id="@id/arrow_left" android:background="@null" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:src="@drawable/ic_chevron_up" android:layout_centerVertical="true" android:rotation="-90.0" />
+            <ImageButton android:id="@id/arrow_right" android:background="@null" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:src="@drawable/ic_chevron_up" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:rotation="90.0" />
+            <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/cheers" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/default_padding" android:text="@string/tutorial_view_pager_done" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:customFont="ProximaNova-Bold.otf" style="@style/Button.FlatLinkButton.Small" />
+            <me.relex.circleindicator.CircleIndicator android:id="@id/indicator" android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_toLeftOf="@id/arrow_right" android:layout_toRightOf="@id/arrow_left" android:layout_centerInParent="true" app:ci_drawable="@drawable/circle_primary_filled" app:ci_drawable_unselected="@drawable/circle_steel_filled" app:ci_margin="@dimen/view_pager_dots_margin" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/buttom_panel">
+        <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <View android:id="@id/dimmer" android:background="@color/steel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.5" />
+        <LinearLayout android:orientation="vertical" android:id="@id/overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <View android:background="@color/pearl" android:layout_width="match_parent" android:layout_height="@dimen/divider_thickness" />
+            <FrameLayout android:id="@id/overlay_container" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

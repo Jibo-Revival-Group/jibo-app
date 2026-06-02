@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jibo.p019ui.view.proxima.CustomFontTextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    android:layout_marginLeft="@dimen/activity_margin_small"
+    android:text="TEXT"
+    app:customFont="ProximaNova-Semibold.ttf"
+    style="@style/Button.FlatLinkButton.Small.Red"/>

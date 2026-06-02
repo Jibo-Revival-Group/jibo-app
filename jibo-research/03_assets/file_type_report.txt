@@ -1,0 +1,30 @@
+---- jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libsqlcipher.so
+jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libsqlcipher.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, stripped
+---- jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libucrop.so
+jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libucrop.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=072bb23d8c2acc97ee459768bd4c7c3c2e489958, stripped
+---- jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libutils-jni.so
+jibo-research/03_assets/extracted_apk/lib/arm64-v8a/libutils-jni.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c391bcf69793ffa50eadc3b17147bfcdd4a48150, stripped
+---- jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libsqlcipher.so
+jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libsqlcipher.so: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, stripped
+---- jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libucrop.so
+jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libucrop.so: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, BuildID[sha1]=1c70bb2b6b2dd7d2bef4404a15a94fd719d4a9dd, stripped
+---- jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libutils-jni.so
+jibo-research/03_assets/extracted_apk/lib/armeabi-v7a/libutils-jni.so: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, BuildID[sha1]=7a5040bd04f47bf023a401ee2b741a385a3782aa, stripped
+---- jibo-research/03_assets/extracted_apk/lib/armeabi/libsqlcipher.so
+jibo-research/03_assets/extracted_apk/lib/armeabi/libsqlcipher.so: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86/libsqlcipher.so
+jibo-research/03_assets/extracted_apk/lib/x86/libsqlcipher.so: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86/libucrop.so
+jibo-research/03_assets/extracted_apk/lib/x86/libucrop.so: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, BuildID[sha1]=c9dcbec673d091c0f810596c9f9209e94a75cdc0, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86/libutils-jni.so
+jibo-research/03_assets/extracted_apk/lib/x86/libutils-jni.so: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, BuildID[sha1]=4db0596eb5c1038557ad70324ccc582acfd5ed9b, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86_64/libsqlcipher.so
+jibo-research/03_assets/extracted_apk/lib/x86_64/libsqlcipher.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86_64/libucrop.so
+jibo-research/03_assets/extracted_apk/lib/x86_64/libucrop.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1db14911567c7e49021d79cf46279441e39a08db, stripped
+---- jibo-research/03_assets/extracted_apk/lib/x86_64/libutils-jni.so
+jibo-research/03_assets/extracted_apk/lib/x86_64/libutils-jni.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4d50f32af3282dc062262ca4501463c143113789, stripped
+---- jibo-research/03_assets/extracted_apk/res/raw/genres.json
+jibo-research/03_assets/extracted_apk/res/raw/genres.json: JSON data
+---- jibo-research/03_assets/extracted_apk/res/raw/video_congrats.mp4
+jibo-research/03_assets/extracted_apk/res/raw/video_congrats.mp4: ISO Media, MP4 v2 [ISO 14496-14]

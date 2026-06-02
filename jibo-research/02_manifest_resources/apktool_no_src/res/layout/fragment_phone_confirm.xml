@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_confirmation_code" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+    <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/code" android:text="" android:hint="@string/six_digit_code" android:maxLength="6" android:digits="0123456789" android:inputType="phone" android:imeOptions="actionDone" style="@style/EditText" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textColor="@color/firecracker" android:id="@id/footer_error" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dp" android:text="@string/current_password_error" style="@style/SectionFooter" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/footer1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dp" android:text="@string/confirm_phone_footer_text" style="@style/SectionFooter" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/resend_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_padding" android:text="@string/button_send_new_code" android:textAllCaps="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+</LinearLayout>

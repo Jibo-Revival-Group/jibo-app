@@ -1,0 +1,45 @@
+package com.google.android.gms.internal;
+
+public final class zzchc {
+   public static zzchd<Long> A = zzchd.a("measurement.upload.stale_data_deletion_interval", 86400000L, 86400000L);
+   public static zzchd<Long> B = zzchd.a("measurement.upload.refresh_blacklisted_config_interval", 604800000L, 604800000L);
+   public static zzchd<Long> C = zzchd.a("measurement.upload.initial_upload_delay_time", 15000L, 15000L);
+   public static zzchd<Long> D = zzchd.a("measurement.upload.retry_time", 1800000L, 1800000L);
+   public static zzchd<Integer> E = zzchd.a("measurement.upload.retry_count", 6, 6);
+   public static zzchd<Long> F = zzchd.a("measurement.upload.max_queue_time", 2419200000L, 2419200000L);
+   public static zzchd<Integer> G = zzchd.a("measurement.lifetimevalue.max_currency_tracked", 4, 4);
+   public static zzchd<Integer> H = zzchd.a("measurement.audience.filter_result_max_count", 200, 200);
+   public static zzchd<Long> I = zzchd.a("measurement.service_client.idle_disconnect_millis", 5000L, 5000L);
+   private static zzchd<Boolean> J = zzchd.a("measurement.service_enabled", true, true);
+   private static zzchd<Boolean> K = zzchd.a("measurement.service_client_enabled", true, true);
+   private static zzchd<Boolean> L = zzchd.a("measurement.log_third_party_store_events_enabled", false, false);
+   private static zzchd<Boolean> M = zzchd.a("measurement.log_installs_enabled", false, false);
+   private static zzchd<Boolean> N = zzchd.a("measurement.log_upgrades_enabled", false, false);
+   private static zzchd<Boolean> O = zzchd.a("measurement.log_androidId_enabled", false, false);
+   public static zzchd<Boolean> a = zzchd.a("measurement.upload_dsid_enabled", false, false);
+   public static zzchd<Boolean> b = zzchd.a("measurement.event_sampling_enabled", false, false);
+   public static zzchd<String> c = zzchd.a("measurement.log_tag", "FA", "FA-SVC");
+   public static zzchd<Long> d = zzchd.a("measurement.ad_id_cache_time", 10000L, 10000L);
+   public static zzchd<Long> e = zzchd.a("measurement.monitoring.sample_period_millis", 86400000L, 86400000L);
+   public static zzchd<Long> f = zzchd.a("measurement.config.cache_time", 86400000L, 3600000L);
+   public static zzchd<String> g = zzchd.a("measurement.config.url_scheme", "https", "https");
+   public static zzchd<String> h = zzchd.a("measurement.config.url_authority", "app-measurement.com", "app-measurement.com");
+   public static zzchd<Integer> i = zzchd.a("measurement.upload.max_bundles", 100, 100);
+   public static zzchd<Integer> j = zzchd.a("measurement.upload.max_batch_size", 65536, 65536);
+   public static zzchd<Integer> k = zzchd.a("measurement.upload.max_bundle_size", 65536, 65536);
+   public static zzchd<Integer> l = zzchd.a("measurement.upload.max_events_per_bundle", 1000, 1000);
+   public static zzchd<Integer> m = zzchd.a("measurement.upload.max_events_per_day", 100000, 100000);
+   public static zzchd<Integer> n = zzchd.a("measurement.upload.max_error_events_per_day", 1000, 1000);
+   public static zzchd<Integer> o = zzchd.a("measurement.upload.max_public_events_per_day", 50000, 50000);
+   public static zzchd<Integer> p = zzchd.a("measurement.upload.max_conversions_per_day", 500, 500);
+   public static zzchd<Integer> q = zzchd.a("measurement.upload.max_realtime_events_per_day", 10, 10);
+   public static zzchd<Integer> r = zzchd.a("measurement.store.max_stored_events_per_app", 100000, 100000);
+   public static zzchd<String> s = zzchd.a("measurement.upload.url", "https://app-measurement.com/a", "https://app-measurement.com/a");
+   public static zzchd<Long> t = zzchd.a("measurement.upload.backoff_period", 43200000L, 43200000L);
+   public static zzchd<Long> u = zzchd.a("measurement.upload.window_interval", 3600000L, 3600000L);
+   public static zzchd<Long> v = zzchd.a("measurement.upload.interval", 3600000L, 3600000L);
+   public static zzchd<Long> w = zzchd.a("measurement.upload.realtime_upload_interval", 10000L, 10000L);
+   public static zzchd<Long> x = zzchd.a("measurement.upload.debug_upload_interval", 1000L, 1000L);
+   public static zzchd<Long> y = zzchd.a("measurement.upload.minimum_delay", 500L, 500L);
+   public static zzchd<Long> z = zzchd.a("measurement.alarm_manager.minimum_interval", 60000L, 60000L);
+}

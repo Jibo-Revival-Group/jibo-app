@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/llHeader" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.FontFitTextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_40" android:text="@string/email_invite_info_title" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:text="@string/email_invite_info_text" style="@style/Body1" />
+    </LinearLayout>
+    <ImageView android:layout_width="250.0dp" android:layout_height="250.0dp" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_marginBottom="@dimen/activity_vertical_margin" android:src="@drawable/invite_to_gallery" android:layout_above="@id/btnYes" android:layout_below="@id/llHeader" android:layout_centerHorizontal="true" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_16sp" android:id="@id/btnNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding" android:text="@string/email_invite_info_no" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnYes" android:text="@string/email_invite_info_yes" android:layout_above="@id/btnNo" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+</RelativeLayout>

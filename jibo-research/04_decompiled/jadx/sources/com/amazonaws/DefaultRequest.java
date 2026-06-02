@@ -1,0 +1,171 @@
+package com.amazonaws;
+
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.util.AWSRequestMetrics;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/* JADX INFO: loaded from: classes.dex */
+public class DefaultRequest<T> implements Request<T> {
+    private InputStream content;
+    private URI endpoint;
+    private AWSRequestMetrics metrics;
+    private final AmazonWebServiceRequest originalRequest;
+    private String resourcePath;
+    private String serviceName;
+    private int timeOffset;
+    private Map<String, String> parameters = new LinkedHashMap();
+    private Map<String, String> headers = new HashMap();
+    private HttpMethodName httpMethod = HttpMethodName.POST;
+
+    public DefaultRequest(AmazonWebServiceRequest amazonWebServiceRequest, String str) {
+        this.serviceName = str;
+        this.originalRequest = amazonWebServiceRequest;
+    }
+
+    @Override // com.amazonaws.Request
+    public void addHeader(String str, String str2) {
+        this.headers.put(str, str2);
+    }
+
+    @Override // com.amazonaws.Request
+    public void addParameter(String str, String str2) {
+        this.parameters.put(str, str2);
+    }
+
+    @Override // com.amazonaws.Request
+    @Deprecated
+    public AWSRequestMetrics getAWSRequestMetrics() {
+        return this.metrics;
+    }
+
+    @Override // com.amazonaws.Request
+    public InputStream getContent() {
+        return this.content;
+    }
+
+    @Override // com.amazonaws.Request
+    public URI getEndpoint() {
+        return this.endpoint;
+    }
+
+    @Override // com.amazonaws.Request
+    public Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    @Override // com.amazonaws.Request
+    public HttpMethodName getHttpMethod() {
+        return this.httpMethod;
+    }
+
+    @Override // com.amazonaws.Request
+    public AmazonWebServiceRequest getOriginalRequest() {
+        return this.originalRequest;
+    }
+
+    @Override // com.amazonaws.Request
+    public Map<String, String> getParameters() {
+        return this.parameters;
+    }
+
+    @Override // com.amazonaws.Request
+    public String getResourcePath() {
+        return this.resourcePath;
+    }
+
+    @Override // com.amazonaws.Request
+    public String getServiceName() {
+        return this.serviceName;
+    }
+
+    @Override // com.amazonaws.Request
+    public int getTimeOffset() {
+        return this.timeOffset;
+    }
+
+    @Override // com.amazonaws.Request
+    @Deprecated
+    public void setAWSRequestMetrics(AWSRequestMetrics aWSRequestMetrics) {
+        if (this.metrics != null) {
+            throw new IllegalStateException("AWSRequestMetrics has already been set on this request");
+        }
+        this.metrics = aWSRequestMetrics;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setContent(InputStream inputStream) {
+        this.content = inputStream;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setEndpoint(URI uri) {
+        this.endpoint = uri;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setHeaders(Map<String, String> map) {
+        this.headers.clear();
+        this.headers.putAll(map);
+    }
+
+    @Override // com.amazonaws.Request
+    public void setHttpMethod(HttpMethodName httpMethodName) {
+        this.httpMethod = httpMethodName;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setParameters(Map<String, String> map) {
+        this.parameters.clear();
+        this.parameters.putAll(map);
+    }
+
+    @Override // com.amazonaws.Request
+    public void setResourcePath(String str) {
+        this.resourcePath = str;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setServiceName(String str) {
+        this.serviceName = str;
+    }
+
+    @Override // com.amazonaws.Request
+    public void setTimeOffset(int i) {
+        this.timeOffset = i;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getHttpMethod()).append(" ");
+        sb.append(getEndpoint()).append(" ");
+        String resourcePath = getResourcePath();
+        if (resourcePath == null) {
+            sb.append("/");
+        } else {
+            if (!resourcePath.startsWith("/")) {
+                sb.append("/");
+            }
+            sb.append(resourcePath);
+        }
+        sb.append(" ");
+        if (!getParameters().isEmpty()) {
+            sb.append("Parameters: (");
+            for (String str : getParameters().keySet()) {
+                sb.append(str).append(": ").append(getParameters().get(str)).append(", ");
+            }
+            sb.append(") ");
+        }
+        if (!getHeaders().isEmpty()) {
+            sb.append("Headers: (");
+            for (String str2 : getHeaders().keySet()) {
+                sb.append(str2).append(": ").append(getHeaders().get(str2)).append(", ");
+            }
+            sb.append(") ");
+        }
+        return sb.toString();
+    }
+}

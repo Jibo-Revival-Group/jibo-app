@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/selectable_list_item_bg" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/icon" android:background="@drawable/circle_primary_filled" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:src="@drawable/avatar_levels" android:scaleType="fitXY" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/default_padding" android:layout_toLeftOf="@id/textStatus" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/text_size_16sp" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/text_robot_settings" app:customFont="ProximaNova-Semibold.ttf" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textAppearance="?android:textAppearanceLarge" android:id="@android:id/text2" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:text="@string/text_robot_settings_description" android:singleLine="true" style="@style/Caption" />
+    </LinearLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/ErrorText" />
+</RelativeLayout>

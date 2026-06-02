@@ -1,0 +1,26 @@
+package com.bumptech.glide.load.data;
+
+import android.content.res.AssetManager;
+import java.io.IOException;
+import java.io.InputStream;
+
+/* JADX INFO: loaded from: classes.dex */
+public class StreamAssetPathFetcher extends AssetPathFetcher<InputStream> {
+    public StreamAssetPathFetcher(AssetManager assetManager, String str) {
+        super(assetManager, str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.bumptech.glide.load.data.AssetPathFetcher
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public InputStream loadResource(AssetManager assetManager, String str) throws IOException {
+        return assetManager.open(str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.bumptech.glide.load.data.AssetPathFetcher
+    /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+    public void close(InputStream inputStream) throws IOException {
+        inputStream.close();
+    }
+}

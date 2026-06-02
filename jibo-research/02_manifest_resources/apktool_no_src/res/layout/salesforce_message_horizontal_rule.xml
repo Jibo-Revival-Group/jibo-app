@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:background="@drawable/salesforce_horizontal_rule" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginLeft="@dimen/salesforce_message_feed_horizontal_margin" android:layout_marginTop="16.0dp" android:layout_marginRight="@dimen/salesforce_message_feed_horizontal_margin" android:layout_marginBottom="16.0dp" android:layout_marginStart="@dimen/salesforce_message_feed_horizontal_margin" android:layout_marginEnd="@dimen/salesforce_message_feed_horizontal_margin" />
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView android:layout_gravity="center" android:id="@id/salesforce_horizontal_rule_text" android:background="@color/salesforce_contrast_quaternary" android:paddingLeft="16.0dp" android:paddingTop="8.0dp" android:paddingRight="16.0dp" android:paddingBottom="8.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" style="@style/SalesforceStyleTextTiny" />
+</FrameLayout>

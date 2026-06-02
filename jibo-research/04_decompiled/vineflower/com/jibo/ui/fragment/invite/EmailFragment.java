@@ -1,0 +1,382 @@
+package com.jibo.ui.fragment.invite;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
+import butterknife.BindView;
+import com.amazonaws.handlers.AsyncHandler;
+import com.jibo.aws.integration.aws.services.account.model.Account;
+import com.jibo.aws.integration.aws.services.loop.JiboLoopAsyncClient;
+import com.jibo.aws.integration.aws.services.loop.model.Loop;
+import com.jibo.aws.integration.aws.services.loop.model.Member;
+import com.jibo.aws.integration.aws.services.loop.model.UpdateMemberRequest;
+import com.jibo.aws.integration.helpers.LoopHelper;
+import com.jibo.aws.integration.util.DateTimeUtils;
+import com.jibo.db.EntityData;
+import com.jibo.ui.fragment.dialog.AlreadyInTheLoopDialog;
+import com.jibo.ui.fragment.dialog.CircleProgressFragment;
+import com.jibo.utils.Commons;
+import com.jibo.utils.LogUtils;
+import com.jibo.utils.SharedPreferencesUtil;
+import com.jibo.utils.UIUtils;
+import java.util.Iterator;
+import java.util.List;
+
+public class EmailFragment extends BaseSuggestionFragment {
+   public static final String r = LogUtils.a(EmailFragment.class);
+   @BindView
+   AutoCompleteTextView email;
+   @BindView
+   TextView footer;
+   private Member s;
+   private EmailFragment.LaunchMode t = EmailFragment.LaunchMode.send_invite;
+   @BindView
+   TextView title;
+
+   private void s() {
+      if (this.u()) {
+         AlreadyInTheLoopDialog var3 = new AlreadyInTheLoopDialog();
+         Bundle var2 = new Bundle();
+         var2.putParcelable(Loop.class.getSimpleName(), this.k);
+         var2.putParcelable(Account.class.getSimpleName(), this.c);
+         var3.setArguments(var2);
+         var3.show(this.getActivity().getSupportFragmentManager(), AlreadyInTheLoopDialog.class.getSimpleName());
+      } else {
+         if (this.j == null) {
+            this.j = new CircleProgressFragment();
+            this.j.c(this.getString(2131755652));
+            this.j.a(new CircleProgressFragment.OnDismissListener(this) {
+               final EmailFragment a;
+
+               {
+                  this.a = var1;
+               }
+
+               @Override
+               public void a(CircleProgressFragment.Status var1) {
+                  Intent var2 = new Intent();
+                  this.a.getActivity().setResult(-1, var2);
+                  this.a.getActivity().finish();
+               }
+            });
+            this.j.show(this.getActivity().getSupportFragmentManager(), "CircleFragment");
+         }
+
+         JiboLoopAsyncClient var6 = EntityData.a(this.getActivity()).b();
+         String var4 = this.k.getId();
+         String var7 = this.s.getId();
+         String var5 = this.s.getAccount().getEmail();
+         boolean var1;
+         if (!DateTimeUtils.isAdult(this.s.getAccount().getBirthday())) {
+            var1 = true;
+         } else {
+            var1 = false;
+         }
+
+         var6.updateMember(var4, var7, var5, null, null, null, null, var1, new AsyncHandler<UpdateMemberRequest, Loop>(this) {
+            final EmailFragment a;
+
+            {
+               this.a = var1;
+            }
+
+            public void a(UpdateMemberRequest var1, Loop var2) {
+               this.a.j.a(this.a.getString(2131755324));
+               this.a.s.setStatus(Member.InvitationStatus.invited);
+               this.a.a(new Runnable(this, var1) {
+                  final UpdateMemberRequest a;
+                  final <unrepresentable> b;
+
+                  {
+                     this.b = var1;
+                     this.a = var2x;
+                  }
+
+                  @Override
+                  public void run() {
+                     Intent var1x = new Intent();
+                     var1x.putExtra("ARGS_CHOSEN_EMAIL", this.a.getEmail());
+                     this.b.a.getActivity().setResult(-1, var1x);
+                     this.b.a.getActivity().finish();
+                  }
+               });
+            }
+
+            @Override
+            public void onError(Exception var1) {
+               this.a.a(var1, "sending gallery invite", true);
+               this.a.j.b(this.a.getString(2131755323));
+            }
+         });
+      }
+   }
+
+   private void t() {
+      if (this.j == null) {
+         this.j = new CircleProgressFragment();
+         this.j.c(this.getString(2131755844, this.m.getAccount().getFirstName()));
+         this.j.a(new CircleProgressFragment.OnDismissListener(this) {
+            final EmailFragment a;
+
+            {
+               this.a = var1;
+            }
+
+            @Override
+            public void a(CircleProgressFragment.Status var1) {
+               Intent var2 = new Intent();
+               var2.putExtra(Member.class.getSimpleName(), this.a.m);
+               this.a.getActivity().setResult(-1, var2);
+               this.a.getActivity().finish();
+            }
+         });
+         this.j.show(this.getActivity().getSupportFragmentManager(), "CircleFragment");
+      }
+
+      EntityData.a(this.getActivity())
+         .b()
+         .updateMember(this.k.getId(), this.m.getId(), this.c.getEmail(), null, null, null, null, false, new AsyncHandler<UpdateMemberRequest, Loop>(this) {
+            final EmailFragment a;
+
+            {
+               this.a = var1;
+            }
+
+            public void a(UpdateMemberRequest var1, Loop var2) {
+               if (this.a.d()) {
+                  SharedPreferencesUtil.a(this.a.getActivity(), this.a.m.getId());
+               }
+
+               this.a.j.a(this.a.getString(2131755296));
+            }
+
+            @Override
+            public void onError(Exception var1) {
+               this.a.j.b(this.a.getString(2131755288));
+               this.a.a(var1, "update member account", false);
+            }
+         });
+   }
+
+   private boolean u() {
+      List var2 = this.k.getMembers();
+      boolean var1;
+      if (var2 != null && !var2.isEmpty() && var2.size() > 2) {
+         Iterator var3 = var2.iterator();
+
+         while (true) {
+            if (!var3.hasNext()) {
+               var1 = false;
+               break;
+            }
+
+            Member var4 = (Member)var3.next();
+            if (var4.getAccount() != null
+               && this.c.getEmail().equals(var4.getAccount().getEmail())
+               && !LoopHelper.isMemberDeclined(var4)
+               && !LoopHelper.isMemberRemoved(var4)) {
+               var1 = true;
+               break;
+            }
+         }
+      } else {
+         var1 = false;
+      }
+
+      return var1;
+   }
+
+   private void v() {
+      boolean var1;
+      if (!this.email.getText().toString().trim().isEmpty() && Commons.a.matcher(this.email.getText().toString().trim()).matches()) {
+         var1 = true;
+      } else {
+         var1 = false;
+      }
+
+      if (this.p != null) {
+         this.p.setEnabled(var1);
+      }
+   }
+
+   @Override
+   public void a() {
+      String var2 = this.d;
+      String var1 = var2;
+      if (TextUtils.isEmpty(var2)) {
+         var1 = var2;
+         if (this.n != null) {
+            var1 = this.n.getFirstName();
+         }
+      }
+
+      var2 = var1;
+      if (TextUtils.isEmpty(var1)) {
+         var2 = var1;
+         if (this.s != null) {
+            var2 = var1;
+            if (this.s.getAccount() != null) {
+               var2 = this.s.getAccount().getFirstName();
+            }
+         }
+      }
+
+      var1 = var2;
+      if (TextUtils.isEmpty(var2)) {
+         var1 = var2;
+         if (this.c != null) {
+            var1 = this.c.getFirstName();
+         }
+      }
+
+      this.title.setText(this.getString(2131755742, var1));
+      this.email.addTextChangedListener(new TextWatcher(this) {
+         final EmailFragment a;
+
+         {
+            this.a = var1;
+         }
+
+         public void afterTextChanged(Editable var1) {
+         }
+
+         public void beforeTextChanged(CharSequence var1, int var2x, int var3, int var4) {
+         }
+
+         public void onTextChanged(CharSequence var1, int var2x, int var3, int var4) {
+            this.a.v();
+         }
+      });
+      this.email.setText(this.c.getEmail());
+      this.email.requestFocus();
+      UIUtils.b(this.getActivity(), this.email);
+      if (this.o) {
+         this.footer.setVisibility(0);
+         this.footer.setText(this.getString(2131755294, var1));
+      } else if (this.t == EmailFragment.LaunchMode.add_email) {
+         this.footer.setVisibility(0);
+         this.footer.setText(this.getString(2131755283, var1));
+      }
+   }
+
+   @Override
+   protected void a(ActionBar var1) {
+      super.a(var1);
+      var1.setDisplayShowTitleEnabled(true);
+      var1.setHomeAsUpIndicator(2131230814);
+      this.m();
+   }
+
+   @Override
+   public void b() {
+      this.c.setEmail(this.email.getText().toString());
+      if (this.t == EmailFragment.LaunchMode.add_email) {
+         this.s.getAccount().setEmail(this.email.getText().toString());
+         this.s();
+      } else {
+         this.r();
+      }
+
+      this.email.setText("");
+   }
+
+   @Override
+   public void b(Bundle var1) {
+      super.b(var1);
+      if (var1.containsKey("ARG_MODE")) {
+         this.t = EmailFragment.LaunchMode.values()[var1.getInt("ARG_MODE")];
+      }
+
+      this.s = (Member)var1.getParcelable(Member.class.getSimpleName());
+   }
+
+   @Override
+   protected String o() {
+      String var1;
+      if (this.o) {
+         var1 = this.getString(2131756025);
+      } else {
+         var1 = this.getString(2131755383);
+      }
+
+      return var1;
+   }
+
+   @Override
+   public void onCreateOptionsMenu(Menu var1, MenuInflater var2) {
+      super.onCreateOptionsMenu(var1, var2);
+      this.p.setTitle(2131755077);
+      this.p.setIcon(null);
+      this.v();
+   }
+
+   @Override
+   public View onCreateView(LayoutInflater var1, ViewGroup var2, Bundle var3) {
+      return var1.inflate(2131427436, var2, false);
+   }
+
+   @Override
+   public void onResume() {
+      super.onResume();
+      this.a.a = true;
+      this.email.setAdapter(this.a);
+   }
+
+   @Override
+   public void onSaveInstanceState(Bundle var1) {
+      super.onSaveInstanceState(var1);
+      var1.putInt("ARG_MODE", this.t.ordinal());
+      var1.putParcelable(Member.class.getSimpleName(), this.s);
+   }
+
+   @Override
+   public void onViewCreated(View var1, Bundle var2) {
+      super.onViewCreated(var1, var2);
+      this.l();
+      this.e();
+   }
+
+   @Override
+   public void r() {
+      this.e();
+      this.c.setEmail(this.email.getText().toString());
+      if (this.u()) {
+         AlreadyInTheLoopDialog var1 = new AlreadyInTheLoopDialog();
+         Bundle var2 = new Bundle();
+         var2.putParcelable(Loop.class.getSimpleName(), this.k);
+         var2.putParcelable(Account.class.getSimpleName(), this.c);
+         var1.setArguments(var2);
+         var1.show(this.getActivity().getSupportFragmentManager(), AlreadyInTheLoopDialog.class.getSimpleName());
+      } else if (this.t == EmailFragment.LaunchMode.return_email) {
+         Intent var3 = new Intent();
+         var3.putExtra("ARGS_CHOSEN_EMAIL", this.email.getText().toString());
+         this.getActivity().setResult(-1, var3);
+         this.getActivity().finish();
+      } else if (this.t == EmailFragment.LaunchMode.send_invite) {
+         this.q();
+      } else {
+         this.t();
+      }
+   }
+
+   public enum LaunchMode {
+      add_email,
+      return_email,
+      send_invite,
+      set_email;
+
+      private static final EmailFragment.LaunchMode[] $VALUES = new EmailFragment.LaunchMode[]{
+         EmailFragment.LaunchMode.send_invite, EmailFragment.LaunchMode.return_email, EmailFragment.LaunchMode.set_email, EmailFragment.LaunchMode.add_email
+      };
+   }
+}

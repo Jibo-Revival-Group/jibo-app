@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/header_wi_fi_network_password" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editPassword" android:text="" android:hint="@string/hint_wifi_password" android:inputType="textVisiblePassword" android:imeOptions="actionDone" style="@style/EditText">
+            <requestFocus />
+        </com.jibo.ui.view.proxima.CustomFontEditText>
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/txtPasswordHint" android:text="@string/label_wifi_password" style="@style/SectionFooter" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnStaticOptions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_padding" android:text="@string/btn_show_static_ip_options" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

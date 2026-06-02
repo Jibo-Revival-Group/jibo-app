@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@id/app_bar" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="?actionBarSize" android:stateListAnimator="@null">
+        <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:contentInsetStart="@dimen/toolbar_title_insets" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@android:id/tabs">
+            <include android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height" layout="@layout/include_network_down_placeholder" />
+            <FrameLayout android:id="@id/fragment_container" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </LinearLayout>
+        <include android:layout_width="match_parent" android:layout_height="18.0dp" android:layout_marginTop="-8.0dp" android:layout_marginBottom="-8.0dp" layout="@layout/include_progress_bar_linear" />
+        <LinearLayout android:orientation="horizontal" android:id="@android:id/tabs" android:background="@drawable/tab_background" android:layout_width="match_parent" android:layout_height="56.0dp" android:layout_alignParentBottom="true">
+            <com.jibo.ui.view.BottomPanelButton android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.2" app:buttonIcon="@drawable/ic_nav_loop" app:text="@string/button_loop" />
+            <com.jibo.ui.view.BottomPanelButton android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.2" app:buttonIcon="@drawable/ic_nav_media" app:text="@string/button_media" />
+            <com.jibo.ui.view.BottomPanelButton android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.2" app:buttonIcon="@drawable/ic_nav_tips" app:text="@string/button_tips" />
+            <com.jibo.ui.view.BottomPanelButton android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="0.2" app:buttonIcon="@drawable/ic_nav_help_inactive" app:text="@string/button_help" />
+        </LinearLayout>
+        <View android:id="@id/dimmer" android:background="@color/colorDimmerBackground" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/progressBar" />
+        <View android:id="@id/selectorDimmer" android:background="@color/colorJiboDropDownShade" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/progressBar" />
+        <FrameLayout android:id="@id/jiboListContainer" android:background="@color/colorBackgrounds" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView android:id="@id/jiboList" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

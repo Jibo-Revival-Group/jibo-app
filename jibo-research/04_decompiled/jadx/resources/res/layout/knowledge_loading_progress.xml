@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.salesforce.android.service.common.p023ui.views.SalesforceProgressSpinner
+        android:layout_gravity="center"
+        android:id="@+id/knowledge_indeterminate_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:salesforce_highlight_arc_degrees="90"
+        app:salesforce_highlight_color="@color/salesforce_brand_secondary"
+        app:salesforce_rotations_per_second="1"
+        app:salesforce_shadow_color="@color/salesforce_contrast_quaternary"
+        app:salesforce_thickness="2dp"/>
+</FrameLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+    <com.salesforce.android.service.common.p023ui.views.SalesforceTextView
+        android:id="@+id/progress_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        style="?attr/cases_dialogTitleStyle"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.salesforce.android.service.common.p023ui.views.SalesforceProgressSpinner
+            android:id="@+id/progress_spinner"
+            android:layout_width="@dimen/cases_progress_dialog_progress_bar_size"
+            android:layout_height="@dimen/cases_progress_dialog_progress_bar_size"
+            android:layout_marginEnd="@dimen/cases_progress_dialog_progress_bar_margin"/>
+        <com.salesforce.android.service.common.p023ui.views.SalesforceTextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/progress_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?attr/cases_dialogMessageStyle"/>
+    </LinearLayout>
+</LinearLayout>

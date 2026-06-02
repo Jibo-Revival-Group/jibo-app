@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/tvTitle" android:background="@color/white" android:padding="@dimen/dialog_padding" android:layout_width="match_parent" android:layout_height="wrap_content" app:customFont="ProximaNova-Bold.otf" style="@style/Body1" />
+    <android.support.v7.widget.RecyclerView android:id="@id/rvItems" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/divider_thickness" app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+</android.support.constraint.ConstraintLayout>

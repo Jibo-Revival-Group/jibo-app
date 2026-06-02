@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jibo.ui.view.TouchImageView android:id="@id/image" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <RelativeLayout android:id="@android:id/progress" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:layout_width="@dimen/progressbar_size" android:layout_height="@dimen/progressbar_size" android:indeterminate="true" android:layout_centerInParent="true" style="?android:progressBarStyleSmallInverse" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TimePicker android:id="@id/simpleTimePicker" android:layout_width="match_parent" android:layout_height="wrap_content" android:timePickerMode="clock" />
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_marginRight="@dimen/default_padding">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnCancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/tiny_padding_4dp" android:text="@android:string/cancel" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="bottom" android:id="@id/btnSet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/tiny_padding_4dp" android:text="@android:string/ok" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</LinearLayout>

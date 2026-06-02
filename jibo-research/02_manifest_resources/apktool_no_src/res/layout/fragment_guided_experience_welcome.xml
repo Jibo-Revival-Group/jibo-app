@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/activity_double_vertical_margin" android:paddingBottom="@dimen/activity_double_vertical_margin" android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/guided_experience_welcome_title" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_20" android:layout_marginBottom="@dimen/vertical_margin_20">
+            <View android:id="@id/centerLine" android:layout_width="1.0dp" android:layout_height="1.0dp" android:layout_centerInParent="true" />
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="28.0dp" android:src="@drawable/dot_pattern_background" android:scaleType="fitXY" android:layout_alignBottom="@id/jibo_heart" />
+            <com.jibo.ui.view.RoundedImageView android:id="@id/avatar" android:layout_width="@dimen/avatar_size_guided_exp_flow" android:layout_height="@dimen/avatar_size_guided_exp_flow" android:layout_marginRight="-23.0dp" android:scaleType="fitXY" android:layout_alignRight="@id/centerLine" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/jibo_heart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/jibo_heart" android:layout_alignLeft="@id/centerLine" />
+        </RelativeLayout>
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/txtInfo" android:layout_width="300.0dp" android:layout_height="wrap_content" android:text="@string/guided_experience_welcome_text" style="@style/Body1" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

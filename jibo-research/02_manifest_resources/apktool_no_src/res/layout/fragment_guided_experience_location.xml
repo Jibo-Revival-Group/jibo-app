@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/activity_double_vertical_margin" android:paddingBottom="@dimen/activity_double_vertical_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/guided_experience_location_title" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/text" android:layout_width="@dimen/button_min_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_20" android:text="@string/guided_experience_location_text1" style="@style/Body1" />
+        <ImageView android:id="@id/image" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_20" android:layout_marginBottom="@dimen/vertical_margin_20" android:src="@drawable/helpful_bot" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/text2" android:layout_width="@dimen/button_min_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vertical_margin_20" android:text="@string/guided_experience_location_text2" style="@style/Body1" />
+        <com.jibo.ui.view.proxima.CustomFontButton android:layout_gravity="center_horizontal" android:id="@id/btnSetLocation" android:layout_marginTop="@dimen/vertical_margin_20" android:text="@string/guided_experience_location_button_text" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue.Bordered" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

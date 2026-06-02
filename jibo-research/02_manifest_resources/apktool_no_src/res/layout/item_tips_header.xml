@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/icon" android:layout_width="@dimen/loop_member_avatar_size" android:layout_height="@dimen/loop_member_avatar_size" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginBottom="@dimen/message_padding" android:layout_below="@id/divider" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textColor="@color/jibo_blue" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/icon" android:layout_below="@id/divider" app:customFont="ProximaNova-Bold.otf" style="@style/Body1" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginTop="@dimen/tiny_padding_6dp" android:layout_marginRight="@dimen/activity_horizontal_margin" android:layout_toRightOf="@id/icon" android:layout_below="@id/title" style="@style/Caption" />
+    <View android:id="@id/divider" android:background="@color/light_grey" android:layout_width="match_parent" android:layout_height="1.0px" android:layout_marginBottom="@dimen/message_padding" android:layout_alignParentTop="true" />
+</RelativeLayout>

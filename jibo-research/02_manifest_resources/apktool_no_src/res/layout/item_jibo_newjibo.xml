@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="@dimen/avatar_size_small" android:layout_height="@dimen/avatar_size_small" android:src="@drawable/plus_white_filled" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:text="@string/text_setup_a_new_jibo" app:customFont="ProximaNova-Bold.otf" style="@style/Caption.Action" />
+</LinearLayout>

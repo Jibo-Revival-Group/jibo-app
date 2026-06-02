@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/jibo" android:layout_width="80.0dp" android:layout_height="80.0dp" android:layout_marginTop="@dimen/activity_double_vertical_margin" android:src="@drawable/img_loop_jiboavatar" android:layout_centerHorizontal="true" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="24.0sp" android:textColor="@android:color/black" android:gravity="center_horizontal" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/activity_vertical_margin" android:layout_below="@id/jibo" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_15sp" android:textColor="@android:color/black" android:gravity="center_horizontal" android:id="@android:id/text2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_double_vertical_margin" android:text="@string/jibo_status_connected_to" android:layout_below="@android:id/text1" android:layout_centerHorizontal="true" />
+    <ImageButton android:background="@android:color/transparent" android:padding="@dimen/activity_horizontal_margin" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_black" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+</RelativeLayout>

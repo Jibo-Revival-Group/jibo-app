@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/default_padding" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/default_padding" android:paddingRight="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomTextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editIpAddress" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_ip_address" android:maxLines="1" android:singleLine="true" android:maxLength="15" android:inputType="phone" android:imeOptions="actionNext" style="@style/Body2" />
+        </com.jibo.ui.view.proxima.CustomTextInputLayout>
+        <com.jibo.ui.view.proxima.CustomTextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editSubnetMask" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_subnet_mask" android:maxLines="1" android:singleLine="true" android:maxLength="15" android:inputType="phone" android:imeOptions="actionNext" style="@style/Body2" />
+        </com.jibo.ui.view.proxima.CustomTextInputLayout>
+        <com.jibo.ui.view.proxima.CustomTextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editRouter" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_router" android:maxLines="1" android:singleLine="true" android:maxLength="15" android:inputType="phone" android:imeOptions="actionNext" style="@style/Body2" />
+        </com.jibo.ui.view.proxima.CustomTextInputLayout>
+        <com.jibo.ui.view.proxima.CustomTextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editDns1" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_dns1" android:maxLines="1" android:singleLine="true" android:maxLength="15" android:inputType="phone" android:imeOptions="actionNext" style="@style/Body2" />
+        </com.jibo.ui.view.proxima.CustomTextInputLayout>
+        <com.jibo.ui.view.proxima.CustomTextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/editDns2" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_dns2" android:maxLines="1" android:singleLine="true" android:maxLength="15" android:inputType="phone" android:imeOptions="actionDone" style="@style/Body2" />
+        </com.jibo.ui.view.proxima.CustomTextInputLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/cancel_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@android:string/cancel" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/set_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.CoordinatorLayout android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@id/appbar" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent" android:stateListAnimator="@null" app:layout_behavior=".ui.view.NoBounceBehavior">
+            <android.support.design.widget.CollapsingToolbarLayout android:id="@id/collapsing_toolbar" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent" app:contentScrim="?colorPrimary" app:expandedTitleMarginEnd="64.0dp" app:expandedTitleMarginStart="48.0dp" app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <RelativeLayout android:orientation="vertical" android:id="@id/tip_toolbar_container" android:background="@android:color/white" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_collapseMode="pin">
+                    <RelativeLayout android:id="@id/top_toolbar" android:layout_width="match_parent" android:layout_height="80.0dp" />
+                    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_24sp" android:textStyle="bold" android:textColor="@android:color/black" android:gravity="center_horizontal" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tips_title1" android:layout_below="@id/top_toolbar" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" />
+                    <ImageView android:id="@id/image" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tips_margin" android:src="@drawable/bot_basics_header" android:scaleType="centerInside" android:layout_below="@android:id/title" android:layout_centerHorizontal="true" />
+                    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_15sp" android:textColor="@android:color/black" android:gravity="center_horizontal" android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/tips_margin" android:layout_marginTop="@dimen/tips_margin" android:layout_marginRight="@dimen/tips_margin" android:text="@string/tips_content1_1_new" android:layout_below="@id/image" android:layout_centerHorizontal="true" android:lineSpacingExtra="5.0dp" />
+                    <ImageView android:layout_width="40.0dp" android:layout_height="40.0dp" android:layout_marginTop="20.0dp" android:src="@drawable/tips_down_arrow" android:scaleType="centerInside" android:layout_below="@android:id/text1" android:layout_centerHorizontal="true" android:onClick="collapseToolbar" />
+                </RelativeLayout>
+                <android.support.v7.widget.Toolbar android:id="@id/toolbar" android:background="@drawable/gradient_tip_toolbar" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+        <FrameLayout android:id="@id/fragment_container" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_big_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:id="@android:id/text1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/text_wifi_mac_address_info" android:lineSpacingExtra="2.0dp" style="@style/Body1.Steel" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dp" android:layout_below="@android:id/text1" android:layout_centerHorizontal="true">
+        <ImageView android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/jibo_mac_tapscreen" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="5.0sp" android:textColor="@color/white" android:gravity="center" android:background="@drawable/oval_blue" android:paddingLeft="@dimen/tiny_padding_6dp" android:paddingRight="@dimen/tiny_padding_6dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="153.0dp" android:minHeight="@dimen/activity_vertical_margin" android:text="@string/text_mac_address_1234_5678_90ab" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <com.jibo.ui.view.proxima.CustomFontButton android:id="@id/btnRestartSetup" android:layout_marginBottom="@dimen/activity_big_margin" android:text="@string/button_restart_wi_fi_setup" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+</RelativeLayout>

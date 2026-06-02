@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingLeft="@dimen/tiny_padding_6dp" android:paddingTop="@dimen/activity_big_margin_alt" android:paddingRight="@dimen/tiny_padding_6dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/jiboAvatar" android:layout_width="100.0dp" android:layout_height="100.0dp" android:layout_marginBottom="@dimen/activity_big_margin_alt" android:src="@drawable/avatar_levels" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_avatar_selection_title" app:customFont="ProximaNova-Semibold.ttf" style="@style/Title" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_avatar_selection_info" style="@style/Caption" />
+        <View android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.5" />
+        <android.support.v7.widget.RecyclerView android:layout_gravity="center_horizontal" android:id="@android:id/list" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:requiresFadingEdge="none" />
+        <View android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.5" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/help_jibo_learn_their_name" app:customFont="ProximaNova-Semibold.ttf" style="@style/SectionHeader" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/phoneticName" android:text="" android:hint="@string/uncle_jesse" android:maxLength="20" android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionDone" style="@style/EditText" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/phoneticNameTip" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dp" android:text="@string/pronunciation_description" style="@style/SectionFooter" />
+    </LinearLayout>
+</ScrollView>

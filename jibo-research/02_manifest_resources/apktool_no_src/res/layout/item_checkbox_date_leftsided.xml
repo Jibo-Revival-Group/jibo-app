@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="match_parent" android:layout_height="@dimen/default_list_item_height" android:layout_marginBottom="1.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <CheckBox android:id="@id/compound_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/activity_horizontal_margin" android:checked="false" android:button="@drawable/checkbox" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:singleLine="true" app:customFont="ProximaNova-Bold.otf" style="@style/Body2.Blue" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@android:id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:singleLine="true" app:customFont="ProximaNova-Light.ttf" style="@style/Caption.Blue" />
+    </LinearLayout>
+</LinearLayout>

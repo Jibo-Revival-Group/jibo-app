@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="@dimen/activity_big_margin" android:focusableInTouchMode="false" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:id="@android:id/text1" android:paddingLeft="@dimen/activity_double_horizontal_margin" android:paddingRight="@dimen/activity_double_horizontal_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/phone_main_text" android:lineSpacingExtra="2.0dp" style="@style/Body1.Steel" />
+    <ImageView android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dp" android:src="@drawable/phone_info" android:layout_below="@android:id/text1" android:layout_centerHorizontal="true" />
+    <View android:background="@color/pearl" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginBottom="60.0dp" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="match_parent" android:layout_height="60.0dp" android:layout_alignParentBottom="true">
+        <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="75.0dp" android:layout_height="wrap_content" android:text="+1" style="@style/Body1" />
+        <View android:background="@color/pearl" android:layout_width="1.0dp" android:layout_height="match_parent" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:layout_gravity="center_vertical" android:id="@id/phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:hint="(555) 123-4567" android:maxLength="14" android:digits="0123456789() -" android:layout_weight="1.0" android:inputType="phone" android:imeOptions="actionDone" style="@style/EditText" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:enabled="false" android:textColor="@color/text_color_blue_flat_button" android:layout_gravity="center_vertical" android:id="@id/btnNext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/default_padding" android:text="@string/action_next" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.FlatLinkButton" />
+    </LinearLayout>
+</RelativeLayout>

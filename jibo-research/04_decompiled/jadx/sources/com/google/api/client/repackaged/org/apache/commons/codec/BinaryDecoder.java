@@ -1,0 +1,6 @@
+package com.google.api.client.repackaged.org.apache.commons.codec;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface BinaryDecoder extends Decoder {
+    byte[] decode(byte[] bArr) throws DecoderException;
+}

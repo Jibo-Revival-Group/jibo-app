@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="56.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textStyle="bold" android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_padding" android:text="@string/button_messages" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Bold.otf" style="@style/TabTitle" />
+    <ImageView android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_message_tab" android:layout_above="@android:id/text1" android:layout_centerInParent="true" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:textSize="@dimen/text_size_10sp" android:textColor="@android:color/white" android:gravity="center" android:id="@android:id/text2" android:background="@drawable/circle_accent_alt_filled" android:padding="2.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-12.0dp" android:layout_marginBottom="-16.0dp" android:minWidth="17.0dp" android:minHeight="17.0dp" android:layout_toRightOf="@android:id/icon" android:layout_above="@android:id/icon" />
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/colorBackgrounds" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@color/colorBackgrounds" android:paddingTop="@dimen/activity_big_margin" android:paddingBottom="@dimen/activity_big_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_vertical_margin">
+            <include android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/include_avatar_layout" />
+        </LinearLayout>
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/first_name" android:hint="@string/text_firstname" android:maxLength="32" android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionNext" style="@style/EditText" />
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="@dimen/divider_thickness" />
+        <com.jibo.ui.view.proxima.CustomFontEditText android:id="@id/last_name" android:hint="@string/text_lastname" android:maxLength="32" android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionDone" style="@style/EditText" />
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="@dimen/divider_thickness" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/settingGender" android:hint="@string/text_gender" style="@style/Item" />
+        <View android:background="@color/colorBackgrounds" android:layout_width="match_parent" android:layout_height="@dimen/divider_thickness" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/settingBirthday" android:hint="@string/text_birthday" style="@style/Item" />
+    </LinearLayout>
+</ScrollView>

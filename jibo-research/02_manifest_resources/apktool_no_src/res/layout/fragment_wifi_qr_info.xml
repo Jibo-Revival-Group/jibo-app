@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/toolbar" android:padding="@dimen/default_padding" android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height">
+        <ImageView android:id="@android:id/closeButton" android:layout_width="@dimen/square_button_size" android:layout_height="@dimen/square_button_size" android:layout_marginLeft="@dimen/activity_margin_small" android:layout_marginTop="@dimen/activity_margin_small" android:src="@drawable/x_white" android:scaleType="centerInside" android:tint="@color/jibo_blue" />
+        <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnHelp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/action_help" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:customFont="ProximaNova-Bold.otf" style="@style/Button.FlatLinkButton" />
+    </RelativeLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/show_jibo_qr_codes" android:layout_below="@id/toolbar" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Bold.otf" style="@style/Headline" />
+    <com.jibo.ui.view.proxima.CustomFontTextView android:gravity="center_horizontal" android:id="@id/text" android:paddingLeft="@dimen/activity_double_horizontal_margin" android:paddingRight="@dimen/activity_double_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_padding" android:text="@string/show_jibo_qr_codes_text" android:layout_below="@id/title" android:layout_centerHorizontal="true" style="@style/Body1" />
+    <FrameLayout android:layout_width="200.0dp" android:layout_height="match_parent" android:layout_above="@id/btnContinue" android:layout_below="@id/text" android:layout_centerHorizontal="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/wifiImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/wifi_big" />
+    </FrameLayout>
+    <com.jibo.ui.view.proxima.CustomFontTextView android:id="@id/btnContinue" android:layout_marginBottom="76.0dp" android:text="@string/continue_wifi_connection" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:customFont="ProximaNova-Semibold.ttf" style="@style/Button.Circular.Blue" />
+</RelativeLayout>

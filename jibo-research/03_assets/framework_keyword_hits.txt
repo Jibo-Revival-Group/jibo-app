@@ -1,0 +1,2 @@
+jibo-research/03_assets/extracted_apk/assets/crashlytics-build.properties:package_name=com.jibo
+jibo-research/03_assets/extracted_apk/assets/crashlytics-build.properties:app_name=Jibo
